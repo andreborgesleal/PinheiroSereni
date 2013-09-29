@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/MensagemPadrao.xml">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="App_Data/SanGenaro.pdf">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/20/2013 13:55:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>03/08/2012 08:20:10</publishTime>
+    </File>
+    <File Include="bin/PinheiroSereni.Dominio.dll">
+      <publishTime>03/26/2013 19:28:02</publishTime>
+    </File>
+    <File Include="bin/PinheiroSereni.Library.dll">
+      <publishTime>03/26/2013 19:28:01</publishTime>
+    </File>
+    <File Include="bin/PinheiroSereni.Negocio.dll">
+      <publishTime>03/26/2013 19:28:03</publishTime>
+    </File>
+    <File Include="bin/SanGenaro.dll">
+      <publishTime>03/26/2013 19:28:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/05/2011 14:45:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/05/2011 16:42:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/05/2011 14:45:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>01/05/2011 14:45:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>01/05/2011 14:45:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>01/05/2011 14:45:38</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>03/25/2013 11:27:32</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/abacabecalho2.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/atendente.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/botao.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/box.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/box_fill.png">
+      <publishTime>03/21/2013 11:19:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/carimbo.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/carregando.gif">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/chat_offline.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/chat_online.jpg">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/corretor2.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/corretora_imagem.png">
+      <publishTime>03/20/2013 10:29:34</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/email2.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/email_cad.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/espaco_gourmet.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/fitness.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/flamula.jpg">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/flamula.png">
+      <publishTime>03/22/2013 15:33:46</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/google_pin.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/Logomarca.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/LogoPinheiroSereni.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/logosangennaro.png">
+      <publishTime>03/25/2013 11:27:32</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/logosangennaro_pequeno.png">
+      <publishTime>03/20/2013 18:39:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/mapa.png">
+      <publishTime>03/25/2013 11:27:32</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/minifoto1.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/minifoto2.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/minifoto3.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/minifoto4.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/minifoto5.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/minifoto6.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/minifoto7.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/minifoto8.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/phone.jpg">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/pinheiro_logo.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/piscina.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/postit.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/sacada_gourmet.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/salao_de_Festas.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/salao_de_jogos.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/salas_de_jantar_e_estar.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/suite_master.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/telefone2.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/torre.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/TorreSanGennaro.png">
+      <publishTime>03/22/2013 15:33:41</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/SanGenaro/X.PNG">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_222222_256x240.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_454545_256x240.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_888888_256x240.png">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery-ui.css">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.accordion.css">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.all.css">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.autocomplete.css">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.base.css">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.button.css">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.core.css">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.datepicker.css">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.dialog.css">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.progressbar.css">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.resizable.css">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.selectable.css">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.slider.css">
+      <publishTime>03/19/2013 11:51:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.tabs.css">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.theme.css">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_222222_256x240.png">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_454545_256x240.png">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_888888_256x240.png">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery-ui.min.css">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.accordion.min.css">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.autocomplete.min.css">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.button.min.css">
+      <publishTime>03/19/2013 11:50:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.core.min.css">
+      <publishTime>03/19/2013 11:50:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.datepicker.min.css">
+      <publishTime>03/19/2013 11:50:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.dialog.min.css">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.progressbar.min.css">
+      <publishTime>03/19/2013 11:50:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.resizable.min.css">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.selectable.min.css">
+      <publishTime>03/19/2013 11:50:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.slider.min.css">
+      <publishTime>03/19/2013 11:50:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.tabs.min.css">
+      <publishTime>03/19/2013 11:50:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.theme.min.css">
+      <publishTime>03/19/2013 11:50:36</publishTime>
+    </File>
+    <File Include="favicon.png">
+      <publishTime>03/19/2013 11:50:35</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>03/20/2013 13:59:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.min.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.20.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.20.min.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftAjax.debug.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftAjax.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftMvcAjax.debug.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftMvcAjax.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftMvcValidation.debug.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftMvcValidation.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.5.3.js">
+      <publishTime>03/19/2013 11:50:25</publishTime>
+    </File>
+    <File Include="Views/Home/AtendimentoEmail.cshtml">
+      <publishTime>03/25/2013 11:27:37</publishTime>
+    </File>
+    <File Include="Views/Home/Chat.cshtml">
+      <publishTime>03/25/2013 11:27:37</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>03/25/2013 13:01:58</publishTime>
+    </File>
+    <File Include="Views/Home/LigamosParaVoce.cshtml">
+      <publishTime>03/25/2013 11:27:37</publishTime>
+    </File>
+    <File Include="Views/Home/Listening.cshtml">
+      <publishTime>03/21/2013 11:19:40</publishTime>
+    </File>
+    <File Include="Views/Home/Send.cshtml">
+      <publishTime>03/21/2013 11:19:40</publishTime>
+    </File>
+    <File Include="Views/Home/ShowPic.cshtml">
+      <publishTime>03/20/2013 16:51:48</publishTime>
+    </File>
+    <File Include="Views/Home/Talk.cshtml">
+      <publishTime>03/25/2013 11:27:37</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Views/Shared/Mensagem.cshtml">
+      <publishTime>03/25/2013 11:27:50</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>03/26/2013 19:26:20</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout2.cshtml">
+      <publishTime>03/26/2013 19:29:34</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>03/19/2013 11:51:01</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/26/2013 19:29:51</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

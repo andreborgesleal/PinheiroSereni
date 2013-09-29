@@ -1,0 +1,116 @@
+﻿@model PinheiroSereni.Negocio.Repositories.SessaoRepository
+@{
+    ViewBag.Title = "Chat";
+}
+@using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "GET" }))
+{
+    <div style="float: right; height: 30px; margin-left: 100px; font-size: 11px; margin-top: -6px; padding-top: 0px; padding-right: 7px" >
+        <div class="button-sair" onclick="window.location='Exit/@Model.sessionId'">
+            @Html.ActionLink("Sair", "Exit", "Home", new { id = Model.sessionId }, new { @style = "color: #fff; text-decoration: none; padding-top: 15px" }) 
+        </div>
+    </div>
+    <div id="div-status" style="margin-left: 110px; margin-top: -40px">
+        @Html.DropDownListFor(m => m.sessao.statusOperador, (IEnumerable<SelectListItem>)ViewBag.drpStatusOperador, new { @onchange = "ChangeStatus();" })
+    </div>
+    <div style="width: 1024px; margin-left: auto; margin-right: auto">
+        <div style="float: left; width: 290px; height: auto">
+            <div id="div-corretor" style="width: 275px; margin-left: 10px; margin-top: 20px; border: 1px solid #808080; border-radius: 8px;">
+                <div style="height: 20px; font-weight: bold; padding-left: 5px; padding-top: 5px">
+                     @Html.LabelFor(m => m.corretorOnline.corretorId)
+                </div>            
+                <div style="height: 35px; padding-left: 5px">
+                    @Html.TextBoxFor(m => m.corretorOnline.corretorId, new { @class = "text-box-250", @disabled = "disable" })
+                </div>       
+                <div style="height: 20px; font-weight: bold; padding-left: 5px">
+                     @Html.LabelFor(m => m.corretorOnline.nome)
+                </div>            
+                <div style="height: 35px; padding-left: 5px">
+                    @Html.TextBoxFor(m => m.corretorOnline.nome, new { @class = "text-box-250", @disabled = "disable" })
+                </div>  
+                <div style="height: 20px; font-weight: bold; padding-left: 5px">
+                     @Html.LabelFor(m => m.corretorOnline.setor)
+                </div>            
+                <div style="height: 35px; padding-left: 5px">
+                    @Html.TextBoxFor(m => m.corretorOnline.setor, new { @class = "text-box-250", @disabled = "disable" })
+                </div>       
+                <div style="height: 20px; font-weight: bold; padding-left: 5px">
+                     @Html.LabelFor(m => m.corretorOnline.email)
+                </div>            
+                <div style="height: 35px; padding-left: 5px">
+                    @Html.TextBoxFor(m => m.corretorOnline.email, new { @class = "text-box-250", @disabled = "disable" })
+                </div>       
+                <div style="height: 20px; font-weight: bold; padding-left: 5px">
+                     @Html.LabelFor(m => m.corretorOnline.telefone)
+                </div>            
+                <div style="height: 35px; padding-left: 5px; padding-bottom: 5px">
+                    @Html.TextBoxFor(m => m.corretorOnline.telefone, new { @class = "text-box-250", @disabled = "disable" })
+                </div>       
+            </div>
+        </div>
+        <div style="float: left; width: 720px; height: auto; height: auto; margin-left: 5px">
+            <div id="div-cliente">
+                @Html.Partial("Listening", Model.chatRepositories)
+            </div>
+            <div style="margin-top: 15px; margin-left: 0px; width: 700px;">
+                @Html.TextArea("mensagem_corretor","", new { @class = "text-area-mens" })
+            </div>  
+            <div style="float: left; margin-top: 0px; margin-left: 0px; width: 700px">
+                <div style="margin-left: 0px; height: 0px"><input type="button" id="btnMensagem" class="button" value="Enviar" onclick="send();" /></div>  
+            </div>
+        </div> 
+    </div>
+}    
+
+<script type="text/javascript">
+
+    setInterval("AutoRefresh()", 10000);
+
+    function AutoRefresh() {
+        var chatId = $('#form0 #chatIdAtivo').val();
+        if (chatId != 0) {
+            var link = '@Url.Action("Listening", new { id = Model.sessionId, chatId = "param" })';
+            link = link.replace("param", chatId);
+            $('#div-cliente').load(link);
+        }
+        else {
+            var link = '@Url.Action("Listening", new { id = Model.sessionId })';
+            $('#div-cliente').load(link);
+        }
+    }
+
+    function ChangeStatus() {
+        var desc = $("#form0 #sessao_statusOperador").val();
+        var link = '@Url.Action("ChangeStatusOperador", new { id = Model.sessionId, newStatus = "param" })';
+        link = link.replace("param", desc);
+        $('#div-status').load(link);
+    }
+
+    function LinkEditar(chatId) {
+        var link = '@Url.Action("ActivateEdition", new { id = Model.sessionId, chatId = "param" })';
+        link = link.replace("param", chatId);
+        $('#div-cliente').load(link);
+    }
+
+    function LinkDel(chatId) {
+        var link = '@Url.Action("Finish", new { id = Model.sessionId, chatId = "param" })';
+        link = link.replace("param", chatId);
+        $('#div-cliente').load(link);
+    }
+
+    function send() {
+        var chatId = $('#form0 #chatIdAtivo').val();
+        var texto = $('#form0 #mensagem_corretor').val();
+        var xxx = document.all.item("mensagem_corretor");
+        if (chatId != 0 && texto != '') {
+            var link = '@Url.Action("Send", new { id = Model.sessionId, chatId = "param" })';
+            link = encodeURI(link.replace("param", chatId + '&mensagem=' + texto));
+            xxx.value = '';
+            $('#div-cliente').load(link);
+        }
+    }
+
+
+
+</script>
+
+

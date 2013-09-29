@@ -1,0 +1,84 @@
+﻿@model PinheiroSereni.Negocio.Repositories.ProspectRepository
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+@{
+    ViewBag.Title = "Piazza Toscana";
+}
+
+@using (Html.BeginForm())
+{
+    <div id="divCad">
+        <div class="fundoModal">
+        </div>
+        <div class="modalPopupCad" style="font-family: Verdana; color: #000000; font-size: 10px;">
+            <div style="height: auto; margin-top: 0px; width: auto; float: left; padding-top: 5px; padding-left: 5px">
+                <img src="~/../../content/themes/base/images/PiazzaToscana/PizzaToscanaPequeno.png" alt="" />
+            </div>
+            <div style="float: right; height: 180px; padding: 10px; cursor: pointer">
+                <img src="../content/themes/base/images/PiazzaToscana/x.png" alt="" onclick="window.location='index'" />
+            </div>
+            <div style="font-family: Tahoma; font-weight: bold; font-size: 18px; color: #3BB3C2; height: 30px; text-align: right; padding-top: 40px; margin-top: 10px">
+                Corretor&nbsp;<span style="color: #449284">Online</span>
+            </div>
+            <div style="margin-top: -5px; float: right; width: auto; padding-right: 5px; text-align: center; text-indent: 5px; font-size: 9px !important; font-family: Arial !important">
+                De segunda à sábado de 09:00h às 19:00h e domingos de 09:00 às 14:00h
+            </div>
+            <div style="background-image: url(../content/themes/base/images/PiazzaToscana/flamula2.png); background-repeat: no-repeat; height: 70px; width: auto; margin-top: 13px">
+                &nbsp;
+            </div>
+            <div style="padding-left: 50px; width: 330px; float: left">    
+                <div style="color: #808080; font-size: 13px; font-family: Tahoma; padding-top: 5px; height: 25px">
+                    Por favor, informe seus dados abaixo e em <br />seguida clique em <b>Iniciar Atendimento:</b>
+                </div>
+                <div style="color: #808080; font-size: 10px; font-family: Tahoma; height: 30px">
+                </div>
+                <div>
+                    @Html.LabelFor(m => m.prospect.nome) 
+                    <div style="color: #ff0000; font-size: 8px; padding-top: 2px">
+                        @Html.ValidationMessageFor(m => m.prospect.nome,"",new { @style = "color: #ff0000" })
+                    </div>
+                </div>
+                <div style="height: 40px; padding-top: 3px">
+                    @Html.TextBoxFor(m => m.prospect.nome, new { @style = "width: 300px; border-radius: 4px; text-transform: uppercase", @maxlength = "50" })
+                </div>
+                <div>
+                    @Html.LabelFor(m => m.prospect.email)
+                     <div style="color: #ff0000; font-size: 8px; padding-top: 2px">
+                        @Html.ValidationMessageFor(m => m.prospect.email,"",new { @style = "color: #ff0000" })
+                    </div>
+                </div>
+                <div style="height: 40px; padding-top: 3px">
+                     @Html.TextBoxFor(m => m.prospect.email, new { @style = "width: 300px; border-radius: 4px; text-transform: lowercase", @maxlength = "200" })
+                </div>
+                <div>
+                    @Html.LabelFor(m => m.prospect.telefone)
+                     <div style="color: #ff0000; font-size: 8px; padding-top: 2px">
+                        @Html.ValidationMessageFor(m => m.prospect.telefone,"",new { @style = "color: #ff0000" })
+                    </div>
+                </div>
+                <div style="height: 40px; padding-top: 3px">
+                     @Html.TextBoxFor(m => m.prospect.telefone, new { @style = "width: 300px; border-radius: 4px", @maxlength = "13", @onkeypress="return Mascara(this);" })
+                     <div style="color: #808080; font-size: 8px; font-style: italic">(digite somente números - DDD + Telefone)</div>
+                </div>
+                <div style="color: #808080; font-size: 9px; font-family: Verdana; float: left; margin-top: 27px; padding-top: 5px; width: 110px; height: 60px">
+                    <p>* Campo obrigatório</p>
+                </div>
+                <div style="margin-top: 27px; width: 205px; float: left">
+                     <input type="submit" id="btnEnviar" value="Iniciar Atendimento" style="border-radius: 5px; background-color: #449284; color: #fff; width: 150px; font-weight: bold; float: right" />
+                </div>
+            </div>
+            <div style="padding-left: 80px">    
+                <div style="width: 100%">
+                    <div style="width: 200px; padding-top: 25px; height: 230px; float: right">
+                        <div style="margin-top: 0px; float: right; width: auto; padding-right: 5px">
+                            <img src="../content/themes/base/images/PiazzaToscana/atendente.png" alt="" /> 
+                        </div>
+
+                    </div>
+                </div>
+            </div>               
+        </div>
+    </div>
+    @Html.Partial("Mensagem", Model);
+}

@@ -1,0 +1,116 @@
+﻿@model PinheiroSereni.Negocio.Repositories.ControlPanel.Report.Rpt03Repository
+@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = "Painel de Controle";
+}
+
+    <div id="divCad">
+        <div class="fundoModal">
+        </div>
+        <div class="modalPopupDet" style="font-family: Verdana; color: #000000; font-size: 10px;">
+            <div style="height: auto; margin-top: 0px; width: auto; float: left; padding-top: 5px; padding-left: 5px">
+                <img src="~/../../content/themes/base/images/painel/PizzaToscanaPequeno.png" alt="" />
+            </div> 
+            <div style="width: 100%">
+                <div style="float: right; height: 180px; padding: 10px; cursor: pointer">
+                    <img src="../content/themes/base/images/painel/x.png" alt="" onclick="closeDetail('div-detail');" />
+                </div>
+                <div style="font-family: Tahoma; font-weight: bold; font-size: 18px; color: #3BB3C2; height: 20px; text-align: right; padding-top: 40px; padding-right: 60px; margin-top: 20px">
+                    Atendimento&nbsp;<span style="color: #449284">por E-Mail</span>
+                </div>
+                <div style="background-image: url(../content/themes/base/images/painel/flamula2.png); background-repeat: no-repeat; height: 60px; width: auto; margin-top: 13px">
+                    &nbsp;
+                </div>
+            </div>
+            <div style="width: 610px; height: 300px">    
+                <div>
+                    <div style="width: 290px; float: left">
+                        @*----------------
+                        Nome do cliente
+                        ---------------*@
+                        <div style="margin-top: 5px; margin-left: 20px; height: 20px; font-weight: bold">
+                            @Html.Label("Cliente")
+                        </div>            
+                        <div style="margin-left: 20px; height: 15px">
+                            @Html.TextBoxFor(m => m.nome, new { @class = "text-box-250", @maxlength="20", @disabled="disabled" })
+                        </div>       
+                    </div>
+                    <div style="width: 290px; float: right">
+                        @*----------------
+                        E-Mail
+                        ---------------*@
+                        <div style="margin-top: 5px; margin-left: 20px; height: 20px; font-weight: bold">
+                            @Html.Label("E-mail")
+                        </div>            
+                        <div style="margin-left: 20px; height: 15px">
+                            @Html.TextBoxFor(m => m.email, new { @class = "text-box-250", @disabled="disabled" })
+                        </div>       
+                    </div>
+                </div>
+                <div>
+                    <div style="width: 290px; float: left">
+                        @*----------------
+                        Telefone
+                        ---------------*@
+                        <div style="margin-top: 20px; margin-left: 20px; height: 20px; font-weight: bold;">
+                            Telefone
+                        </div>            
+                        <div style="margin-left: 20px; height: 15px">
+                            @Html.TextBoxFor(m => m.telefone, new { @class = "text-box-250", @disabled="disabled" })
+                        </div>       
+                    </div>
+                    <div style="width: 290px; float: left">
+                        @*----------------
+                        Data do e-mail
+                        ---------------*@
+                        <div style="margin-top: 20px; margin-left: 20px; height: 20px; font-weight: bold">
+                            @Html.Label("Data Mensagem")
+                        </div>            
+                        <div style="margin-left: 20px; height: 15px">
+                            @Html.TextBoxFor(m => m.dt_cadastro, new { @class = "text-box-250", @maxlength="20", @disabled="disabled" })
+                        </div>       
+                    </div>
+                </div>
+                <div>
+                    <div style="width: 290px; float: left">
+                        @*----------------
+                        ID Corretor
+                        ---------------*@
+                        <div style="margin-top: 20px; margin-left: 20px; height: 20px; font-weight: bold;">
+                            @Html.Label("ID Corretor")
+                        </div>            
+                        <div style="margin-left: 20px; height: 15px">
+                            @Html.TextBoxFor(m => m.corretorId, new { @class = "text-box-250", @maxlength="20", @disabled="disabled" })
+                        </div>       
+                    </div>
+                    <div style="width: 290px; float: left">
+                        @*----------------
+                        Nome do corretor
+                        ---------------*@
+                        <div style="margin-top: 20px; margin-left: 20px; height: 20px; font-weight: bold">
+                            @Html.Label("Corretor")
+                        </div>            
+                        <div style="margin-left: 20px; height: 15px">
+                            @Html.TextBoxFor(m => m.nome_corretor, new { @class = "text-box-250", @maxlength="20", @disabled="disabled" })
+                        </div>       
+                    </div>
+                </div>
+                <div>
+                    <div style="float: left; width: 580px">
+                        @*----------------
+                        Mensagem
+                        ---------------*@
+                        <div style="margin-top: 20px; margin-left: 20px; height: 20px; font-weight: bold;">
+                            Mensagem
+                        </div>            
+                        <div style="margin-left: 20px">
+                            @Html.TextAreaFor(m => m.mensagemEmail, new { @style="height: 100px; width: 540px", @disabled="disabled" })
+                        </div>       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

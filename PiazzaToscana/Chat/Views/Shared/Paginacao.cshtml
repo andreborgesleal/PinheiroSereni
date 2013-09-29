@@ -1,0 +1,63 @@
+﻿@model System.Web.Mvc.IPagedList
+
+<table class="tabela-paginacao">
+  <tr >
+    @if (Model.TotalCount > 0) {
+        <th class="topoGridLeft">
+            @Model.TotalCount Registros
+        </th>
+        <th class="topoGridCenter">
+            @Html.Label("Ir para a página") 
+            <input type="text" class="text-box-30" maxlength="5" value= "@(Model.PageIndex + 1)" id="goToPage" />/@(Model.LastPage + 1)
+            <span onclick="go()" style="cursor: pointer; color: #666">[Mover]</span>
+        </th>
+        <th class="topoGridCenter">
+            @Html.Label("Total de Linhas") 
+            <input type="text" class="text-box-30" maxlength="3" id="pageSize" value= "@Model.PageSize" />
+            <span onclick="go()" style="cursor: pointer; color: #666">[Atualizar]</span>
+        </th>
+        <th class="topoGridRight">
+            <span style="cursor: pointer" title="Primeiro registro" onclick="javascript:Refresh('0', @Model.PageSize);">[<<]</span>
+            &nbsp;
+            <span style="cursor: pointer" title="Reigistro anterior" onclick="javascript:foward('@(Model.PageIndex - 1)', '@Model.PageSize');">[<]</span>
+            &nbsp;
+            <span style="cursor: pointer" title="Próximo registro" onclick="javascript:foward('@(Model.PageIndex + 1)', '@Model.PageSize');">[>]</span>
+            &nbsp;
+            <span style="cursor: pointer" title="Último registro" onclick="javascript:Refresh('@Model.LastPage', '@Model.PageSize');">[>>]</span>
+        </th>
+    }
+    else
+    { 
+        <th class="topoGridLeft">
+        </th>
+    }
+    </tr>
+</table>
+
+<script type="text/javascript">
+    function go() {
+        var max;
+        var _goToPage;
+        var _pagesize;
+        var value;
+        max = '@Model.LastPage' ;
+        _goToPage = document.getElementById("goToPage");
+        _pagesize = document.getElementById("pageSize");
+        if (_goToPage.value > max)
+            value = max;
+        else
+            value = _goToPage.value-1;
+        Refresh(value, _pagesize.value);
+    }
+
+    function foward(pageindex, pagesize) {
+        var max;
+        max = '@Model.LastPage';
+        if (eval(pageindex) > max)
+            pageindex = max;
+        else if (pageindex < 0)
+            pageindex = 0;
+        Refresh(pageindex, pagesize);
+    }
+
+</script>

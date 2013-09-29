@@ -1,0 +1,49 @@
+﻿@model PinheiroSereni.Negocio.Repositories.Chat.ChatRepository
+@{
+    ViewBag.Title = "Chat";
+}
+@{
+    Layout = null;
+}
+<div style="margin-left: auto; width: 395px; font-weight: normal !important; font-size: 9px; font-family: Tahoma">
+    @Html.HiddenFor(m => m.isOnline)
+    @if (@Model.isOnline.Equals("S"))
+    {
+        <div style="width: 25px; float: right">
+            <img src="../content/themes/base/images/PiazzaToscana/chat_online.jpg" alt="" style="padding: 3px; border: none" />
+        </div>
+        <div style="width: 365px; float: right; padding-top: 7px; text-align: right">
+            <span>Conectado</span>
+        </div>        
+    }
+    else
+    {
+        <div style="width: 25px; float: right">
+            <img src="../content/themes/base/images/PiazzaToscana/chat_offline.png" alt="" style="padding: 3px; border: none" />
+        </div>
+        <div style="width: 365px; float: right; padding-top: 7px; text-align: right">
+            <span>Desconectado</span>
+        </div>
+    }
+</div> 
+
+<div style="margin-top: 0px; margin-left: 0px; width: 395px; font-weight: normal !important">
+    <div style="margin-top: 10px; margin-left: 0px; width: 395px; overflow: scroll; background-color: #e0eee2; height: 255px; font-size: 9px; border: 1px solid #808080; padding-left: 5px; padding-bottom: 5px; padding-right: 5px; line-height: 18px !important">
+        @if (Model != null)
+        {
+            @Html.DisplayTextFor(m => m.conversa)
+        }
+    </div>
+    <a id="tttt" href="#final"></a>
+</div>
+
+<script type="text/javascript">
+    document.getElementById("tttt").click();
+    
+    if (document.getElementById("mensagem_cliente") != null) {
+        document.getElementById("mensagem_cliente").focus();
+        document.getElementById("mensagem_cliente").value = document.getElementById("mensagem_cliente").value;        
+    }
+</script>
+
+

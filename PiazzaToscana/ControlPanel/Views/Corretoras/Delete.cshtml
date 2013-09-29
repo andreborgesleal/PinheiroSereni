@@ -1,0 +1,47 @@
+﻿@model PinheiroSereni.Negocio.Repositories.ControlPanel.CorretoraRepository
+@{
+    ViewBag.Title = "Painel de Controle";
+}
+
+@using (Html.BeginForm("Delete", "Corretoras", FormMethod.Post))
+{
+    <div id="div-incluir">
+        <div class="baseForm">
+            <div style="font-family: Verdana; font-weight: bold; font-size: 14px; color: #808080; height: 25px">Exclusão de Corretoras:</div>
+            <div style="height: 3px; width: auto; background-color: #f00">
+                &nbsp;
+            </div>
+            <div style="margin-top: 20px">
+                <div style="width: 690px; float: left">
+                    @*----------------
+                    Nome da corretora
+                    ---------------*@
+                    <div style="margin-top: 10px; margin-left: 20px; height: 20px; font-weight: bold;">
+                        @Html.LabelFor(m => m.corretora.nome)
+                    </div>            
+                    <div style="margin-left: 20px; height: 15px">
+                        @Html.TextBoxFor(m => m.corretora.nome, new { @class = "text-box-300-upper", @maxlength="50", @disabled="disabled" })
+                    </div>       
+                    <div style="margin-left: 20px; height: 15px; padding-top: 8px">
+                        @Html.ValidationMessageFor(m => m.corretora.nome, "", new { @class = "font-validation" })
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div style="float: left; height: 50px">
+                    <div style="margin-top: 5px; margin-left: 20px; height: 20px; font-weight: bold">
+                        <input type="submit" value="Excluir" class="button" />
+                        <input type="button" value="Fechar" class="button" onclick="retorna();" />
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("Mensagem", Model);
+}
+<script type="text/javascript">
+
+    function retorna() {
+        call('@Url.Content("~/Corretoras/Browse")');
+    }
+</script>

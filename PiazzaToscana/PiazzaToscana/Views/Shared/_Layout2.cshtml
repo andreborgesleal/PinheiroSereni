@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-2.5.3.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/MicrosoftAjax.js")" type="text/javascript"></script>     
+    <script src="@Url.Content("~/Scripts/MicrosoftMvcAjax.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/MicrosoftMvcValidation.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.maskedinput-1.2.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
+
+</head>
+<body style="background-color: #fff" onLoad="comeco()">
+    <div class="page">
+        <div style="height: 50px; margin-top: 0px; background-image: url(~/../../content/themes/base/images/PiazzaToscana/abacabecalho2.png); background-repeat: no-repeat; width: 1000px">
+            <div style="height: auto; margin-top: 20px; width: 620px; float: left; margin-left: 0px; font-size: 12px; color: #fff; text-align: right">
+                <i>Ligue agora:</i> <b>(91)3131-4450</b>
+            </div>
+            <div style="float: left; height: 67px; width: 120px; margin-top: 5px; margin-left: 16px; background-image: url(~/../../content/themes/base/images/PiazzaToscana/postit.png); background-repeat: no-repeat">
+                &nbsp;
+            </div>
+            <div style="float: left; height: 50px; width: 59px; margin-top: 0px; margin-left: 2px; background-image: url(~/../../content/themes/base/images/PiazzaToscana/corretora_imagem.png); background-repeat: no-repeat">
+                &nbsp;
+            </div>
+            <div style="height: 50px; margin-top: 13px; width: 160px; float: left; margin-left: 0px; margin-right: 15px; font-weight: bold; font-size: 11px; color: #fff; text-align: right">
+                Seg. à sáb.: de 9 às 19h. Dom.: de 9 às 14h.
+            </div>
+        </div>
+        <div style="width: 1000px; margin-top: 0px">
+            <div style="margin-top: -15px; width: 675px; float: left">
+                <div style="height: 100px; text-align: center; width: 150px; margin-top: 0px; margin-left: 20px; background-image: url(~/../../content/themes/base/images/PiazzaToscana/LogoPinheiroSereni.png); background-repeat: no-repeat; float: left">
+                </div>
+                <div onclick="window.location='/Home/Chat'" style="height: 100px; cursor: pointer; text-align: center; width: 145px; margin-top: 0px; background-position-x: 50px; background-position-y: 10px; background-image: url(~/../../content/themes/base/images/PiazzaToscana/corretor2.png); background-repeat: no-repeat; float: left">
+                    <div style="margin-top: 60px">
+                        @Html.ActionLink("Corretor Online", "Chat", "Home", "", new { @style = "color: #000; text-decoration: none" })
+                    </div>
+                </div>
+                <div onclick="window.location='/Home/AtendimentoEmail'" style="height: 100px; cursor: pointer; text-align: center; width: 145px; margin-top: 0px; background-position-x: 50px; background-position-y: 10px; background-image: url(~/../../content/themes/base/images/PiazzaToscana/email2.png); background-repeat: no-repeat; float: left">
+                    <div style="margin-top: 60px">
+                        @Html.ActionLink("Atendimento por E-mail", "AtendimentoEmail", "Home", "", new { @style = "color: #000; text-decoration: none" })
+                    </div>
+                </div>
+                <div onclick="window.location='/Home/LigamosParaVoce'" style="height: 100px; cursor: pointer; text-align: center; width: 145px; margin-top: 0px; background-position-x: 50px; background-position-y: 10px; background-image: url(~/../../content/themes/base/images/PiazzaToscana/telefone2.png); background-repeat: no-repeat; float: left">
+                    <div style="margin-top: 60px">
+                        @Html.ActionLink("Ligamos para você", "LigamosParaVoce", "Home", "", new { @style = "color: #000; text-decoration: none;" })
+                    </div>
+                </div>
+                <div style="height: 280px; cursor: pointer; width: 675px; margin-top: -20px; background-position-x: 0px; background-position-y: 0px; background-image: url(~/../../content/themes/base/images/PiazzaToscana/Torre.jpg); background-repeat: no-repeat; float: left; z-index: 10">
+                
+                </div>
+            </div>
+            <div style="margin-top: -30px; width: 325px; margin-left: 0px; float: left" >
+                <div style="width: 300px; height: 164px; margin-top: 0px; background-image: url(~/../../content/themes/base/images/PiazzaToscana/piazzatoscana2.png); background-repeat: no-repeat; background-position-x: 45px; background-position-y: 20px; float: left">
+                </div>
+                <div style="height: 30px; margin-top: 0px; width: 300px; float: left; margin-left: 0px; margin-right: 0px; font-family: Arial; font-weight: bold; font-size: 24px; color: #000000; text-align: center">
+                    Localização privilegiada.
+                </div>
+                <div style="height: 25px; margin-top: 0px; width: 300px; float: left; margin-left: 0px; margin-right: 0px; font-family: Arial; font-weight: bold; font-size: 14.5px; color: #000000; text-align: center;">
+                    Tudo o que você buscava para sua família
+                </div>
+                <div style="line-height: 11px; margin-top: 0px; width: 300px; float: left; margin-left: 3px; padding-right: 0px; font-family: Arial; font-size: 10px; color: #808080; text-align: justify">
+                    Localizado em plena Tavares Bastos, na Marambaia. Um condomínio com quatro piscinas, sala de cinema, pista de cooper, 5 mil metros quadrados de área de lazer e infraestrutura moderna, para quem mora em uma grande cidade. É a sua vida entrando em outro nível. Venha mudar de vida no Piazza Toscana.
+                </div>
+            </div>
+        </div>
+        <div style="width: 1000px; height: 75px; margin-top: -19px; background-image: url(~/../../content/themes/base/images/PiazzaToscana/flamula2.png); background-repeat: no-repeat; background-position-x: 0px; background-position-y: 0px; float: left; z-index: 0">
+        </div>
+        <div style="width: 1000px">
+            <div style="margin-top: 0px; width: 660px; float: left">
+                <div style="float: left; height: 25px; margin-top: -5px; width: 650px; text-align: center; float: left; font-family: Arial; font-weight: bold; font-size: 18px; color: #222b57" >
+                    Ambientes para viver e sonhar. Mais de 25 itens de lazer.
+                </div>
+                <!-- Fotos do empreendimento -->
+                <div style="height: auto; margin-top: 0px; width: 650px; float: left;" >
+                    <div style="width: auto; margin-top: 20px; margin-left: 0px; padding-right: 5px; float: left; cursor: pointer">
+                        <img src="~/../../content/themes/base/images/PiazzaToscana/seta_esquerda.png" alt="" onmouseover="menos()" /> 
+                    </div>
+                    <div style="width: auto; margin-top: 0px; margin-left: 0px; float: left; cursor: pointer;">
+                        <a id="aId" onclick="showPic(2)"><img id="imgId" src="~/../../content/themes/base/images/PiazzaToscana/Brinquedoteca.png" alt="" onmouseover="moldura('ON',this);" onmouseout="moldura('OFF',this);" /></a>
+                    </div>
+                    <div style="width: auto; margin-top: 0px; margin-left: 10px; float: left; cursor: pointer">
+                        <a id="aId1" onclick="showPic(1)"><img id="imgId1" src="~/../../content/themes/base/images/PiazzaToscana/churrasqueira.png" alt="" onmouseover="moldura('ON',this);" onmouseout="moldura('OFF',this);" /></a>
+                    </div>
+                    <div style="width: auto; margin-top: 0px; margin-left: 10px; float: left; cursor: pointer">
+                        <a id="aId2" onclick="showPic(0)"><img id="imgId2" src="~/../../content/themes/base/images/PiazzaToscana/cinema.png" alt="" onmouseover="moldura('ON',this);" onmouseout="moldura('OFF',this);" /></a>
+                    </div>
+                    <div style="width: auto; margin-top: 0px; margin-left: 10px; float: left; cursor: pointer">
+                        <a id="aId3" onclick="showPic(-1)"><img id="imgId3" src="~/../../content/themes/base/images/PiazzaToscana/cyber.png" alt="" onmouseover="moldura('ON',this);" onmouseout="moldura('OFF',this);" /></a>
+                    </div>
+                    <div style="width: auto; margin-top: 20px; margin-right: 44px; float: right; cursor: pointer">
+                        <img src="~/../../content/themes/base/images/PiazzaToscana/seta_direita.png" alt="" onmouseover="mais()" /> 
+                    </div>
+                </div>
+            </div>
+            <div style="width: 335px; margin-left: 0px; float: left; margin-top: -140px" >
+                <div style="height: 314px; margin-top: 0px; margin-left: 13px; width: 330px; float: left; background-image: url(~/../../content/themes/base/images/PiazzaToscana/box_fill.png); background-repeat: no-repeat; font-size: 14px; color: #fff; font-weight: bold" >
+                    <div style="width: 290px; height: 40px; padding-top: 20px; padding-left: 10px; padding-bottom: 10px; font-family: Arial; text-align: center">Inscreva-se aqui e receba, agora mesmo, o folder digital do Piazza Toscana.<p></p></div>
+                     @RenderBody()
+                </div>
+            </div>
+        </div>
+        <!-- Google Map -->
+        <div style="width: 670px; height: 42px; margin-top: -45px; float: left; font-size: 18px; color: #243480; font-family: Calibri; text-align: center" >
+            <div style="float: left; height: 45px; width: 670px; background-image: url(~/../../content/themes/base/images/PiazzaToscana/google_pin.png); background-repeat: no-repeat; background-position-x: 215px; margin-top: -20px; font-weight: bold; cursor: pointer" onclick="showMapa()">
+                <div style="margin-top: 19px; width: 670px">  
+                    Mapa com a localização.
+                </div>
+            </div>
+            <div style="height: 0px; margin-top: 0px; color: #000; text-align: center; font-weight: normal; width: 670px; float: left; font-size: 12px" >
+                vendaspiazzatoscana.com.br - 2013 - todos os direitos reservados
+            </div>
+        </div>
+        <form name="form" style="height: 0px">
+            <input type="hidden" name="texto">
+        </form>
+        <!-- Fotos ampliadas do empreendimento -->
+        <div id="divFotos" style="visibility: hidden; height: 0px" >
+        </div>
+        <div id="divMensagem" style="visibility: hidden; height: 0px">
+            <div class="fundoModal">
+            </div>
+            <div class="modalPopup">
+                <div>
+                    @ViewBag.Mensagem
+                    
+                    <p></p>
+                    <p></p>
+                </div>
+                <input type="button" value="Fechar" onclick="closeDetail(this)" />
+            </div>
+        </div>
+        <div id="divMapa" style="visibility: hidden; height: 0px">
+            <div class="fundoModal" onclick="closeDetail('divMapa')">
+            </div>
+            <div class="modalPopupMapa">
+                <div id="printMap">
+                    <img style="width: auto; height: auto" id="fotoMap" src="~/../../content/themes/base/images/PiazzaToscana/mapa.png" alt="texto"/>
+                </div>
+            </div>
+        </div>
+        <div id="carregando" style="visibility: hidden; height: 0px">
+            <div class="fundoModal">
+            </div>
+            <div class="modalPopupCarregando">
+                <div>
+                    <img style="width: auto; height: auto" src="~/../../content/themes/base/images/PiazzaToscana/carregando.gif" alt="texto"/><br />
+                </div>
+            </div>
+        </div>
+        <section id="main">
+           
+        </section>
+        <footer>
+        </footer>
+    </div>
+</body>
+
+<script type="text/javascript">
+    array1 = new Array("~/../../content/themes/base/images/PiazzaToscana/Brinquedoteca.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/espmulher.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/churrasqueira.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/cinema.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/cyber.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/fitness.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/gourmet.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/hallsocial.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/piscina.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/playaventura.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/playbaby.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/pracacooper.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/pracadosdesejos.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/quadraesportiva.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/sacada.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/sala.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/salaofestas.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/salaofestasinfantil.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/squash.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/suite.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/jogos.png",
+                        "~/../../content/themes/base/images/PiazzaToscana/jogosjuvenis.png")
+
+    array2 = new Array("~/../../content/themes/base/images/PiazzaToscana/BrinquedotecaGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/espmulherGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/churrasqueiraGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/cinemaGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/cyberGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/fitnessGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/gourmetGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/hallsocialGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/piscinaGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/playaventuraGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/playbabyGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/pracacooperGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/pracadosdesejosGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/quadraesportivaGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/sacadaGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/salaGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/salaofestasGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/salaofestasinfantilGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/squashGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/suiteGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/jogosGrande.png",
+                    "~/../../content/themes/base/images/PiazzaToscana/jogosjuvenisGrande.png")
+
+    function moldura(status, obj) {
+        if (status == 'ON') {
+            obj.style["border"] = "solid";
+            obj.style["border-width"] = "2px";
+            obj.style["border-color"] = "#243480";
+            obj.style["border-radius"] = "5px";
+        }
+        else {
+            obj.style["border"] = "none";
+        }
+    }
+
+    function closeDetail(obj) {
+        document.getElementById(obj).style["visibility"] = "hidden";
+    }
+
+    function showPic(position) {
+
+        document.getElementById('divFotos').style['visibility'] = 'visible';
+        var idx = parseInt(document.form.texto.value) - 1;
+        var link = '@Url.Action("ShowPic")';
+        link = encodeURI(link + '?img=' + array2[idx - position]);
+        $('#divFotos').load(link);
+    }
+
+    function showMapa() {
+        document.getElementById("divMapa").style["visibility"] = "visible";
+    }
+    function comeco() {
+
+        document.getElementById('imgId').src = array1[0]
+        document.getElementById('imgId1').src = array1[1]
+        document.getElementById('imgId2').src = array1[2]
+        document.getElementById('imgId3').src = array1[3]
+        document.form.texto.value = "3"
+    }
+
+    function mais() {
+        var index = parseInt(document.form.texto.value);
+        if (index < 21) {
+            if (index <= 17)
+                index = index + 4;
+            else
+                index = index + 1;
+            document.getElementById('imgId').src = array1[index - 3]
+            document.getElementById('imgId1').src = array1[index - 2]
+            document.getElementById('imgId2').src = array1[index - 1]
+            document.getElementById('imgId3').src = array1[index]
+
+            document.form.texto.value = index.toString();
+        }
+    }
+
+    function menos() {
+
+        var index = parseInt(document.form.texto.value);
+        if (index >= 4) {
+            if (index >= 20)
+                index = index - 1;
+            else
+                index = index - 4;
+            document.getElementById('imgId').src = array1[index - 3]
+            document.getElementById('imgId1').src = array1[index - 2]
+            document.getElementById('imgId2').src = array1[index - 1]
+            document.getElementById('imgId3').src = array1[index]
+
+            document.form.texto.value = index.toString();
+        }
+    }
+
+    function numeros() {
+
+        if (document.all) // Internet Explorer  
+            var tecla = event.keyCode;
+        else if (document.layers) // Nestcape  
+            var tecla = e.which;
+        else if (document.getElementsByTagName("*"))
+            var tecla = event.keyCode;
+        if ((tecla > 47 && tecla < 58)) // numeros de 0 a 9  
+            return true;
+        else {
+            if (tecla != 8) // backspace  
+                //event.keyCode = 0;  
+                return false;
+            else
+                return true;
+        }
+    }
+
+    function Mascara(objeto) {
+        if (numeros(objeto)) {
+            if (objeto.value.length == 0)
+                objeto.value = '(' + objeto.value;
+
+            if (objeto.value.length == 3)
+                objeto.value = objeto.value + ')';
+
+            if (objeto.value.length == 8)
+                objeto.value = objeto.value + '-';
+            return true;
+        }
+        else
+            return false;
+    }
+
+
+    function Desabilita(id) {
+        document.getElementById(id).disabled = "disabled";
+        return true;
+    }
+
+</script>
+</html>

@@ -1,0 +1,615 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+body {
+    background-color: #5c87b2;
+    font-size: .85em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: #696969;
+}
+
+a:link {
+    color: #034af3;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #505abc;
+}
+
+a:hover {
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active {
+    color: #12eb87;
+}
+
+p, ul {
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5em;
+    color: #000;
+}
+
+h1 {
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    padding: 0 0 10px 0;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: Red;
+    height: 40px;
+    color: #fff;
+    padding: 4px;
+}
+
+header, #header {
+    position: relative;
+    margin-bottom: 0px;
+    color: #000;
+    padding: 0;
+}
+
+header h1, #header h1 {
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+    color: #fff;
+    border: none;
+    line-height: 2em;
+    font-size: 32px !important;
+    text-shadow: 1px 1px 2px #111;
+}
+
+#main {
+    padding: 30px 30px 15px 30px;
+    background-color: #fff;
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+    border-radius: 4px 0 0 0;
+}
+
+footer, 
+#footer {
+    background-color: #fff;
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0 0 30px 0;
+    font-size: .9em;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+ul#menu {
+    border-bottom: 1px #5C87B2 solid;
+    padding: 0 0 2px;
+    position: relative;
+    margin: 0;
+    text-align: right;
+}
+
+ul#menu li {
+    display: inline;
+    list-style: none;
+}
+
+ul#menu li#greeting {
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    color: #fff;
+}
+
+ul#menu li a {
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    background-color: #e8eef4;
+    color: #034af3;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+
+ul#menu li a:hover {
+    background-color: #fff;
+    text-decoration: none;
+}
+
+ul#menu li a:active {
+    background-color: #a6e2a6;
+    text-decoration: none;
+}
+
+ul#menu li.selected a {
+    background-color: #fff;
+    color: #000;
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+input[type="text"], 
+input[type="password"] {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+    width: 200px;
+}
+
+select {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+}
+
+input[type="submit"] {
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table {
+    border: solid 1px #e8eef4;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 5px;
+    border: solid 1px #e8eef4;
+}
+
+table th {
+    padding: 6px 5px;
+    text-align: left;
+    background-color: #e8eef4;
+    border: solid 1px #e8eef4;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear {
+    clear: both;
+}
+
+.error {
+    color: Red;
+}
+
+nav, 
+#menucontainer {
+    margin-top: 40px;
+}
+
+div#title {
+    display: block;
+    float: left;
+    text-align: left;
+}
+
+#logindisplay {
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    margin: 10px;
+    color: White;
+}
+
+#logindisplay a:link {
+    color: white;
+    text-decoration: underline;
+}
+
+#logindisplay a:visited {
+    color: white;
+    text-decoration: underline;
+}
+
+#logindisplay a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label, 
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.display-field, 
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+.text-box {
+    width: 30em;
+}
+
+.text-box.multi-line {
+    height: 6.5em;
+}
+
+.tri-state {
+    width: 6em;
+}
+/* André Leal
+----------------------------------------------------------*/
+.fundoModal
+{
+    background-color: Black;
+    filter:alpha(opacity=60);
+    opacity:0.6;
+    position: absolute; left: 0%; top: 0%;
+    width: 100%;
+    height: 100%;
+    _height: 800px;
+    _width: 110%;
+    
+}
+.modalPopup
+{
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-style: solid;
+    border-color: Gray;
+    padding: 3px;
+    width: 450px;
+    height: auto;
+    position: absolute;
+    overflow: auto;
+    border-radius: 4px;
+    left: 50%; 
+    top: 15%; 
+    margin-left: -225px;
+}
+
+.modalPopupCad
+{
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-style: solid;
+    border-color: Gray;
+    padding: 3px;
+    width: 600px;
+    margin-left: -300px; 
+    height: auto;
+    position: absolute;
+    overflow: auto;
+    border-radius: 8px; 
+    left: 50%; top: 10%; 
+}
+
+.modalPopupDet
+{
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-style: solid;
+    border-color: Gray;
+    padding: 3px;
+    width: 640px;
+    margin-left: -400px; 
+    height: 500px;
+    position: absolute;
+    overflow: auto;
+    border-radius: 8px; 
+    left: 50%; top: 10%; 
+}
+
+.modalPopupImg
+{
+    background-color: #FFFFFF;
+    border: none;
+    padding: 2px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    border-radius: 0px;
+    left: 50%; top: 10%;
+    margin-left: -365px;
+}
+
+.baseForm
+{
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-style: solid;
+    border-color: Gray;
+    padding: 3px;
+    width: 1000px;
+    height: auto;
+    position: absolute;
+    overflow: auto;
+    border-radius: 4px;
+    left: 50%; 
+    top: 70px; 
+    margin-left: -500px;
+}
+
+.text-box-30 {
+    border-radius: 6px; height: 20px; width: 30px !important
+}
+
+.text-box-75 {
+    border-radius: 6px; height: 20px; width: 75px !important
+}
+
+.text-box-250 {
+    border-radius: 6px; height: 20px; width: 250px !important
+}
+
+.text-box-300 {
+    border-radius: 6px; height: 20px; width: 300px !important
+}
+
+.text-box-30-upper {
+    border-radius: 6px; height: 20px; width: 30px !important; text-transform: uppercase
+}
+.text-box-250-upper {
+    border-radius: 6px; height: 20px; width: 250px !important; text-transform: uppercase
+}
+.text-box-250-lower {
+    border-radius: 6px; height: 20px; width: 250px !important; text-transform: lowercase
+}
+.text-box-300-upper {
+    border-radius: 6px; height: 20px; width: 300px !important; text-transform: uppercase
+}
+.text-box-300-lower {
+    border-radius: 6px; height: 20px; width: 300px !important; text-transform: lowercase
+}
+
+.button {
+    height: 25px; 
+    width: 100px; 
+    background-color: #f00; 
+    color: #fff; 
+    border: 0px; 
+    margin-top: 10px
+}
+
+.button-link {
+    height: 20px; 
+    width: 100px; 
+    background-color: #f00; 
+    color: #fff; 
+    border: 0px; 
+    text-align: center; 
+    padding-top: 6px;
+}
+
+.button-link-ajax {
+    color: #fff !important;
+    text-decoration: none !important ;
+}
+
+.win8-tools {
+    font-family: Tahoma; 
+    font-size: 18px; 
+    font-weight: bold; 
+    margin-top: 4px; 
+    text-indent: 0px; 
+    background-image: url(~/../../Content/themes/base/images/painel/ferramenta.png); 
+    background-repeat: no-repeat; 
+    background-position-x: 10px; 
+    background-position-y: 0px; 
+    height: 30px;
+}
+
+.wall-paper {
+    background-color: #f1ebeb; font-family: Verdana; font-size: 12px; height: 600px
+}
+
+.font-validation {
+    color: #ff0000;
+    font-size: 10px;
+    font-family: Cambria;
+}
+
+.div-button {
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-top: 20px; 
+    padding-top: 20px; 
+    width: 1024px;
+}
+
+.button-sair {
+    background-image: url(~/../../Content/themes/base/images/painel/sair.png); 
+    background-repeat: no-repeat; 
+    background-position-x: 5px; 
+    background-position-y: 5px; 
+    height: 33px;
+    width: 70px;
+    text-align: right;
+    cursor: pointer;
+    margin-top: 0px;
+    padding-top: 11px;
+    font-family: Arial;
+    font-size: 16px;
+}
+
+.menu-cadastro
+{
+    background-image: url(~../../../Content/themes/base/images/painel/archive.png);
+    background-repeat: no-repeat;
+    background-position-y: 10px;
+    background-position-x: 4px;
+}
+
+.menu-relatorio
+{
+    background-image: url(~../../../Content/themes/base/images/painel/impressora.png);
+    background-repeat: no-repeat;
+    background-position-y: 10px;
+    background-position-x: 4px;
+}
+
+.menu-casa
+{
+    background-image: url(~/../../Content/themes/base/images/painel/casa.png);
+    margin-top: -18px;
+    width: 39px;
+    height: 35px;
+}
+
+.menu-corretor
+{
+    background-image: url(~/../../Content/themes/base/images/painel/corretor.png);
+    margin-top: -18px;
+    width: 19px;
+    height: 35px;
+    margin-right: 7px;
+}
+
+.menu-parametro
+{
+    background-image: url(~/../../Content/themes/base/images/painel/tools2.png);
+    margin-top: -18px;
+    width: 44px;
+    height: 35px;
+}
+
+.x-fechar
+{
+    background-image: url(~/../../Content/themes/base/images/painel/x.png);
+    width: 25px;
+    height: 35px;
+    background-repeat: no-repeat;
+}
+
+.flamula
+{
+    background-image: url(~/../../Content/themes/base/images/painel/flamula.jpg);
+    background-repeat: no-repeat;
+    height: 50px; 
+    width: auto;
+}
+
+.logo-acesso {
+    background-image: url(~/../../Content/themes/base/images/painel/Logomarca.png); 
+    background-repeat: no-repeat; 
+    background-position-x: 0px; 
+    background-position-y: 0px; 
+}
+
+.logo-acesso2 {
+    background-image: url(~/../../Content/themes/base/images/painel/PiazzaToscana.png); 
+    background-repeat: no-repeat; 
+    background-position-x: 0px; 
+    background-position-y: 0px; 
+
+}
+
+.logo-acesso3 {
+    background-image: url(~/../../Content/themes/base/images/painel/unlock.png); 
+    background-repeat: no-repeat; 
+    background-position-x: 40px; 
+    background-position-y: 50px; 
+}
+
+.button-sair {
+    background-image: url(~/../../Content/themes/base/images/painel/sair.png); 
+    background-repeat: no-repeat; 
+    background-position-x: 5px; 
+    background-position-y: 5px; 
+    height: 33px;
+    width: 70px;
+    text-align: right;
+    cursor: pointer;
+    margin-top: 0px;
+    padding-top: 11px;
+    font-family: Arial;
+    font-size: 16px;
+}

@@ -1,0 +1,130 @@
+﻿@model System.Web.Mvc.PagedList<PinheiroSereni.Negocio.Repositories.ControlPanel.Report.Rpt01Repository>
+@{
+    ViewBag.Title = "Painel de Controle";
+}
+
+@using (Html.BeginForm("Rpt01", "Report", FormMethod.Post, new { target = "_blank" }))
+{
+    <div id="div-browse">
+        <div class="baseForm">
+            <div style="font-family: Verdana; font-weight: bold; font-size: 14px; color: #808080; height: 25px">Listagem de clientes:</div>
+            <div style="height: 3px; width: auto; background-color: #f00">
+                &nbsp;
+            </div>
+            <div style="margin-top: 20px">
+                <div style="width: 200px; height: 80px; float: left">
+                    @*----------------
+                    Período
+                    ---------------*@
+                    @{
+                        string dtinicial = DateTime.Today.AddDays(-30).ToString("dd/MM/yyyy");
+                        string dtfinal = DateTime.Today.ToString("dd/MM/yyyy");   
+                    }
+                    <div style="margin-top: 10px; margin-left: 20px; height: 20px; font-weight: bold;">
+                        @Html.Label("Período")
+                    </div>            
+                    <div style="margin-left: 20px; height: 15px; float: left">
+                        @Html.TextBox("dt_inicio", dtinicial, new { @class = "text-box-75", @onblur = "return fnValidaData(this, false);" }) à
+                        @Html.TextBox("dt_fim", dtfinal, new { @class = "text-box-75", @onblur = "return fnValidaData(this, true);" }) &nbsp;
+                    </div>       
+                </div>
+                <div style="width: 230px; height: 20px; float: left">
+                    @*----------------
+                    Empreendimento
+                    ---------------*@
+                    <div style="margin-top: 8px; margin-left: 20px; height: 11px; font-weight: bold">
+                        @Html.Label("Empreendimento")
+                    </div>            
+                    <div style="margin-left: 20px; height: 15px; float: left; margin-top: 10px">
+                        @Html.DropDownList("empreendimentoId", (IEnumerable<SelectListItem>)ViewBag.drpEmpreendimentos, new { @style = "width: 210px" })
+                    </div>       
+                </div>
+                <div style="width: 450px; height: 20px; float: left">
+                    @*----------------
+                    Ordenação
+                    ---------------*@
+                    <div style="margin-top: 10px; margin-left: 20px; height: 11px; font-weight: bold">
+                        @Html.Label("Ordenação")
+                    </div>            
+                    <div style="margin-left: 20px; height: 15px; float: left; margin-top: 0px">
+                        @Html.DropDownList("ordenacao", (IEnumerable<SelectListItem>)ViewBag.drpOrdenacao, new { @style = "width: 210px" })
+                        <input type="button" value="Consultar" class="button" onclick="return Run();" />
+                        <input type="submit" value="Imprimir" class="button" />
+                    </div>       
+                </div>
+            </div>
+        </div>
+    </div>@*
+    @Html.Partial("Mensagem", Model.First());*@
+}
+
+<div id="div-list" class="listagem">
+    @Html.Partial("Rpt01List", Model)
+</div>
+
+<script type="text/javascript">
+
+    $("#dt_inicio").focus();
+
+    function Run() {
+
+        if ($("#dt_inicio").val() == '' || $("#dt_inicio").val().length != 10 ) {
+            alert('Data inicial deve ser informada');
+            $("#dt_inicio").focus();
+            return false;
+        }
+
+        if ($("#dt_fim").val() == '' || $("#dt_fim").val().length != 10) {
+            alert('Data final deve ser informada');
+            $("#dt_fim").focus();
+            return false;
+        }
+
+        Refresh('0', '40');
+        return true;
+    }
+
+    function Refresh(index, pagesize) {
+        var img;
+        img = document.getElementById("carregando");
+        img.style["visibility"] = "visible";
+
+        $.ajax({
+            type: "GET",
+            url: "Rpt01List",
+            data: {
+                index: index,
+                dt_inicio: $("#dt_inicio").val(),
+                dt_fim: $("#dt_fim").val(),
+                ordenacao: $("#ordenacao").val(),
+                empreendimentoId: $("#empreendimentoId").val(),
+                pageSize: pagesize,
+            },
+            success: function (data) {
+                $('#div-list').html(data);
+                $('#msgs').html("");
+                $('#carregando').css("visibility", "hidden");
+            }
+        });
+    }
+
+    function closeDetail(obj) {
+        document.getElementById(obj).style["visibility"] = "hidden";
+        call('@Url.Content("~/Report/Browse")');
+    }
+
+    $(pageReady);
+
+    function pageReady() {
+
+        $.ajaxSetup({ cache: false });
+
+        formIsDisabled = false;
+
+        $(function () {
+            $("#dt_inicio").mask("?99/99/9999");
+            $("#dt_fim").mask("?99/99/9999");
+        });
+
+    }
+</script>

@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+@{
+    ViewBag.Title = "Piazza Toscana";
+}
+
+    <div id="divSucesso" style="float: left; width: 200px; color: #000; font-family: Arial; font-size: 12px; visibility: visible; border-radius: 5px; font-weight: normal">
+        <div class="fundoModal">
+        </div>
+        <div class="modalPopup">
+            <div style="float: right; height: 180px; padding: 3px; cursor: pointer">
+                <img src="../content/themes/base/images/PiazzaToscana/x.png" alt="" onclick="window.location = 'index'" />
+            </div>
+            <div style="font-family: Verdana; font-weight: bold; padding: 5px; font-size: 14px; color: #808080; height: 25px">Observação</div>
+            <div style="background-image: url(../content/themes/base/images/PiazzaToscana/flamula.jpg); background-repeat: no-repeat; height: 50px; width: auto">
+                &nbsp;
+            </div>
+            <div>
+                @{ string _msg = ViewBag.Sucesso; }
+                <div style="margin-left: 21px; margin-top: 15px; font-size: 13px; color: #000; font-weight: normal; text-align: center; padding-top: 15px; padding-right: 10px">@PinheiroSereni.Dominio.Enumeracoes.MensagemPadrao.Message(38).ToString()</div>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+    </div> 
+

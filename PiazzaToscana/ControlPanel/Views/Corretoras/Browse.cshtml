@@ -1,0 +1,41 @@
+﻿@model System.Web.Mvc.PagedList<PinheiroSereni.Negocio.Repositories.ControlPanel.CorretoraRepository>
+@{
+    ViewBag.Title = "Painel de Controle";
+}
+<div id="div-list" class="listagem">
+    @Html.Partial("List", Model)
+    @Html.Partial("Mensagem", Model.First());
+    <div id="xcrud"></div>
+</div>
+<div class="div-button">
+    <input type="button" value="Incluir" class="button" onclick="window.location = 'Create'" />
+</div>
+<div id="crud"></div>
+
+<script type="text/javascript">
+
+    function Refresh(index, pagesize) {
+        var img;
+        img = document.getElementById("carregando");
+        img.style["visibility"] = "visible";
+
+        $.ajax({
+            type: "GET",
+            url: "List",
+            data: {
+                index: index,
+                pageSize: pagesize,
+            },
+            success: function (data) {
+                $('#div-list').html(data);
+                $('#msgs').html("");
+                $('#carregando').css("visibility", "hidden");
+            }
+        });
+    }
+
+    function closeDetail(obj) {
+        document.getElementById(obj).style["visibility"] = "hidden";
+        call('@Url.Content("~/Corretoras/Browse")');
+    }
+</script>

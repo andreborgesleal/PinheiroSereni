@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiazzaToscana", "PiazzaToscana\PiazzaToscana.csproj", "{31FE0131-1957-4711-A6E3-856F85AB0FB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinheiroSereni.Library", "PinheiroSereni.Library\PinheiroSereni.Library.csproj", "{03DD9E7A-BC58-494A-8AAF-AF495A71098D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinheiroSereni.Dominio", "PinheiroSereni.Dominio\PinheiroSereni.Dominio.csproj", "{9B7511CA-C795-4FC2-BC5B-F229FA34883C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinheiroSereni.Negocio", "PinheiroSereni.Negocio\PinheiroSereni.Negocio.csproj", "{93D1F875-4155-42D4-92F7-3C2B7CAEFDD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlPanel", "ControlPanel\ControlPanel.csproj", "{40C6DC0C-8336-4842-92C4-B52D0834176A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat", "Chat\Chat.csproj", "{C63A2D1B-D5F3-42C8-A3EE-E979B7EE1425}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanGenaro", "SanGenaro\SanGenaro.csproj", "{91025540-44C0-49A7-8A00-DAA23AAD6220}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31FE0131-1957-4711-A6E3-856F85AB0FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31FE0131-1957-4711-A6E3-856F85AB0FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31FE0131-1957-4711-A6E3-856F85AB0FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31FE0131-1957-4711-A6E3-856F85AB0FB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03DD9E7A-BC58-494A-8AAF-AF495A71098D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03DD9E7A-BC58-494A-8AAF-AF495A71098D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03DD9E7A-BC58-494A-8AAF-AF495A71098D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03DD9E7A-BC58-494A-8AAF-AF495A71098D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B7511CA-C795-4FC2-BC5B-F229FA34883C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B7511CA-C795-4FC2-BC5B-F229FA34883C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B7511CA-C795-4FC2-BC5B-F229FA34883C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B7511CA-C795-4FC2-BC5B-F229FA34883C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93D1F875-4155-42D4-92F7-3C2B7CAEFDD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D1F875-4155-42D4-92F7-3C2B7CAEFDD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D1F875-4155-42D4-92F7-3C2B7CAEFDD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D1F875-4155-42D4-92F7-3C2B7CAEFDD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40C6DC0C-8336-4842-92C4-B52D0834176A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40C6DC0C-8336-4842-92C4-B52D0834176A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40C6DC0C-8336-4842-92C4-B52D0834176A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40C6DC0C-8336-4842-92C4-B52D0834176A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C63A2D1B-D5F3-42C8-A3EE-E979B7EE1425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C63A2D1B-D5F3-42C8-A3EE-E979B7EE1425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C63A2D1B-D5F3-42C8-A3EE-E979B7EE1425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C63A2D1B-D5F3-42C8-A3EE-E979B7EE1425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91025540-44C0-49A7-8A00-DAA23AAD6220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91025540-44C0-49A7-8A00-DAA23AAD6220}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91025540-44C0-49A7-8A00-DAA23AAD6220}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91025540-44C0-49A7-8A00-DAA23AAD6220}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

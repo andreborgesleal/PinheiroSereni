@@ -1,0 +1,193 @@
+﻿@model IEnumerable<PinheiroSereni.Negocio.Repositories.Chat.ChatRepository>
+@{
+    ViewBag.Title = "Chat";
+}
+@{
+    Layout = null;
+}
+
+<div style="float: left; margin-top: 13px; margin-left: 0px; width: 700px">
+    @Html.Hidden("chatIdAtivo", Model != null ? Model.Where(m => m.isAtivo.Equals("S")).Count() > 0 ? Model.Where(m => m.isAtivo.Equals("S")).First().chat.chatId : 0 : 0)
+    <div class="div-header-list">
+        Clientes Ativos
+    </div>
+    <div class="div-table-list">
+        <table  id="table-sort" class="tablesorter" style="width: 100%">
+            <thead>
+                <tr>
+                    <th style="width: 75px"></th>
+                    <th style="width: 100px">
+                        EMPREENDIMENTO
+                    </th>
+                    <th style="width: 235px">
+                        NOME
+                    </th>
+                    <th style="width: 280px">
+                        E-MAIL
+                    </th>
+                    <th style="width: 100px; text-align: center">
+                        HORA
+                    </th>
+                </tr>
+            </thead>
+        @foreach (var item in Model)
+            {
+            <tbody>
+            <tr id="linha" style="cursor: pointer;">
+                <td>            
+                    <a href="#" class="link-editar" title="Conversar" onclick="LinkEditar('@item.chat.chatId')"></a>
+                    <a href="#" class="link-excluir" title="Encerrar" onclick="LinkDel('@item.chat.chatId')"></a>
+                </td>
+                <td style="text-align: center">
+                    @if (item.isAtivo.Equals("N"))
+                    {
+                        if (!item.chatMessages.Last().corretorId.HasValue)
+                        {
+                            <div id="lab-emp" style="color: #ff0000" >
+                                @item.nome_empreendimento
+                            </div>
+                        }
+                        else
+                        {
+                            @item.nome_empreendimento
+                        }
+                    }
+                    else
+                    {
+                        <div style="color: #ff6a00">@item.nome_empreendimento</div>
+                    }
+                </td>
+                <td style="text-align: left">
+                    @if (item.isAtivo.Equals("N"))
+                    {
+                        if (!item.chatMessages.Last().corretorId.HasValue)
+                        {
+                            <div id="lab-nome" style="color: #ff0000" >
+                                @item.nome_cliente
+                                <embed src="~/../../Content/themes/base/images/painel/beep-5.mp3" width="0" height="0" id="beep"  />
+                            </div>
+                        }
+                        else
+                        {
+                            @item.nome_cliente
+                        }
+                    }
+                    else
+                    {
+                        <div style="color: #ff6a00">@item.nome_cliente</div>
+                    }
+                </td>
+                <td style="text-align: left">
+                    @if (item.isAtivo.Equals("N"))
+                    {
+                        if (!item.chatMessages.Last().corretorId.HasValue)
+                        {
+                            <div id="lab-email" style="color: #ff0000">
+                                @item.chat.email
+                            </div>
+                        }
+                        else
+                        {
+                            @item.chat.email
+                        }
+                    }
+                    else
+                    {
+                        <div style="color: #ff6a00">@item.chat.email</div>
+                    }
+                </td>
+                <td style="text-align: center">
+                    @if (item.isAtivo.Equals("N"))
+                    {
+                        if (!item.chatMessages.Last().corretorId.HasValue)
+                        {
+                            <div id="lab-data" style="color: #ff0000">
+                                @item.chat.dt_inicio.ToString("HH:mm")
+                            </div>
+                        }
+                        else
+                        {
+                            @item.chat.dt_inicio.ToString("HH:mm")
+                        }
+                    }
+                    else
+                    {
+                        <div style="color: #ff6a00">@item.chat.dt_inicio.ToString("HH:mm")</div>
+                    }
+                </td>
+            </tr>
+	        </tbody>
+          }
+        </table>
+        
+    </div>
+    <div style="margin-top: 10px; margin-left: 0px; width: 605px; overflow: scroll; background-color: #e0eee2; height: 255px; font-size: 9px; border: 1px solid #808080; padding-left: 5px; padding-bottom: 5px; padding-right: 5px; line-height: 18px !important">
+        @if (Model != null)
+        {
+            if (Model.Where(j => j.isAtivo == "S").Count() > 0)
+            {
+                @Html.DisplayTextFor(m => m.Where(j => j.isAtivo == "S").First().conversa)
+            }
+            else
+            {
+                @Html.DisplayText("[Nenhum histórico]")
+            }
+        }
+    </div>
+    
+    <a id="tttt" href="#final"></a>
+    
+</div>
+
+
+
+
+<script type="text/javascript">
+
+    
+    //var velocidade = 2000;
+    //var valor = 0;
+    //document.getElementById("texto1") != null
+    
+    if (document.getElementById("mensagem_corretor") != null) {
+        document.getElementById("tttt").click();
+        document.getElementById("mensagem_corretor").focus();
+        document.getElementById("mensagem_corretor").value = document.getElementById("mensagem_corretor").value;
+    }
+
+    //if (document.getElementById("texto1") != null) {
+    //   document.getElementById("tttt").click();
+
+    //    var _texto1 = document.getElementById("texto1" + idx).value;
+    //    var _texto2 = document.getElementById("texto2" + idx).value;
+    //    var _texto3 = document.getElementById("texto3" + idx).value;
+
+    //    var nome = document.getElementById("lab-nome");
+    //    var email = document.getElementById("lab-email");
+    //    var data = document.getElementById("lab-data");
+
+    //    setInterval("pisca();", velocidade);
+    //}
+
+    function pisca() {
+        if (valor == 1) {
+            nome.innerHTML = _texto1;
+            email.innerHTML = _texto2;
+            data.innerHTML = _texto3;
+            valor=0;
+        } else {
+            nome.innerHTML = "";
+            email.innerHTML = "";
+            data.innerHTML = "";
+            valor = 1;
+        }
+    }
+
+    function tocarSom() {
+        var sound = document.getElementById("beep");
+        sound.Play();
+    }
+
+</script>
+
+

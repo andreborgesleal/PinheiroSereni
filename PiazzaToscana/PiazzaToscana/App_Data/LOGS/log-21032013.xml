@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LOG>
+  <LOG ID="1192423836" Data="21/03/2013 18:14:17">
+    <Sessao>a5fbuqgdhmp0urgzi4njqdoo</Sessao>
+    <IP>::1</IP>
+    <HostName>ANDRE-VAIO\André</HostName>
+    <Mensagem>Não foi possível localizar o arquivo 'C:\Users\André\Documents\PiazzaToscana\PiazzaToscanaPiazzaToscana.pdf'.</Mensagem>
+    <NameSpace>PinheiroSereni.Negocio.Roles.Inscricao =&gt; </NameSpace>
+    <Context>prospect.nome="carlos gonçalves",sobreNome="lima",prospect.email="carlos@col.com.br"</Context>
+    <StackTrace />
+  </LOG>
+  <LOG ID="1920138903" Data="21/03/2013 18:14:43">
+    <Sessao>eeafq2v1ae5jmtvbmxdanhe0</Sessao>
+    <IP>::1</IP>
+    <HostName>ANDRE-VAIO\André</HostName>
+    <Mensagem>Não foi possível localizar o arquivo 'C:\Users\André\Documents\PiazzaToscana\PiazzaToscanaPiazzaToscana.pdf'.</Mensagem>
+    <NameSpace>PinheiroSereni.Negocio.Roles.Inscricao =&gt; </NameSpace>
+    <Context>prospect.nome="carlos gonçalves",sobreNome="lima",prospect.email="carlos@col.com.br"</Context>
+    <StackTrace />
+  </LOG>
+  <LOG ID="393739065" Data="21/03/2013 18:15:37">
+    <Sessao>quwktje55wxs40auus4kvz5w</Sessao>
+    <IP>::1</IP>
+    <HostName>ANDRE-VAIO\André</HostName>
+    <Mensagem>Não foi possível localizar o arquivo 'C:\Users\André\Documents\PiazzaToscana\PiazzaToscanaPiazzaToscana.pdf'.</Mensagem>
+    <NameSpace>PinheiroSereni.Negocio.Roles.Inscricao =&gt; </NameSpace>
+    <Context>prospect.nome="carlos gonçalves",sobreNome="lima",prospect.email="carlos@col.com.br"</Context>
+    <StackTrace />
+  </LOG>
+  <LOG ID="194199231" Data="21/03/2013 18:23:31">
+    <Sessao>yu24cp14bcfnbc2xvdljlpeu</Sessao>
+    <IP>::1</IP>
+    <HostName>ANDRE-VAIO\André</HostName>
+    <Mensagem>Não foi possível localizar o arquivo 'C:\Users\André\Documents\PiazzaToscana\PiazzaToscanaPiazzaToscana.pdf'.</Mensagem>
+    <NameSpace>PinheiroSereni.Negocio.Roles.Inscricao =&gt; </NameSpace>
+    <Context>prospect.nome="carlos gonçalves",sobreNome="lima",prospect.email="carlos@col.com.br"</Context>
+    <StackTrace />
+  </LOG>
+</LOG>

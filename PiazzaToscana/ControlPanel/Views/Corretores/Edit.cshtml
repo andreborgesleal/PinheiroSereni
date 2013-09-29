@@ -1,0 +1,196 @@
+﻿@model PinheiroSereni.Negocio.Repositories.ControlPanel.CorretorRepository
+@{
+    ViewBag.Title = "Painel de Controle";
+}
+
+@using (Html.BeginForm("Edit", "Corretores", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div id="div-incluir">
+        <div class="baseForm">
+            <div style="font-family: Verdana; font-weight: bold; font-size: 14px; color: #808080; height: 25px">Edição de Corretores:</div>
+            <div style="height: 3px; width: auto; background-color: #f00">
+                &nbsp;
+            </div>
+            <div style="margin-top: 20px">
+                <div style="width: 330px; float: left">
+                    @*----------------
+                    Nome do corretor
+                    ---------------*@
+                    <div style="margin-top: 10px; margin-left: 20px; height: 20px; font-weight: bold;">
+                        @Html.LabelFor(m => m.corretor.nome)
+                    </div>            
+                    <div style="margin-left: 20px; height: 15px">
+                        @Html.TextBoxFor(m => m.corretor.nome, new { @class = "text-box-300-upper", @maxlength="20" })
+                    </div>       
+                    <div style="margin-left: 20px; height: 15px; padding-top: 8px">
+                        @Html.ValidationMessageFor(m => m.corretor.nome, "", new { @class = "font-validation" })
+                    </div>
+                </div>
+                <div style="width: 330px; float: left">
+                    @*----------------
+                    Nome do corretora
+                    ---------------*@
+                    <div style="margin-top: 5px; margin-left: 20px; height: 20px; font-weight: bold">
+                        @Html.LabelFor(m => m.corretor.corretoraId)
+                    </div>            
+                    <div style="margin-left: 20px; height: 20px">
+                        @Html.DropDownListFor(m => m.corretor.corretoraId, (IEnumerable<SelectListItem>)ViewBag.drpCorretoras, new { @style = "width: 300px" })
+                    </div>       
+                    <div style="margin-left: 20px; height: 15px; padding-top: 8px">
+                        @Html.ValidationMessageFor(m => m.corretor.corretoraId, "", new { @class = "font-validation" })
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div style="width: 330px; float: left">
+                    @*----------------
+                    Setor
+                    ---------------*@
+                    <div style="margin-top: 5px; margin-left: 20px; height: 20px; font-weight: bold">
+                        @Html.LabelFor(m => m.corretor.setor)
+                    </div>            
+                    <div style="margin-left: 20px; height: 15px">
+                        @Html.TextBoxFor(m => m.corretor.setor, new { @class = "text-box-300-upper", @maxlength="30" })
+                    </div>       
+                    <div style="margin-left: 20px; height: 15px; padding-top: 8px">
+                        @Html.ValidationMessageFor(m => m.corretor.setor, "", new { @class = "font-validation" })
+                    </div>
+                </div>
+                <div style="width: 330px; float: left">
+                    @*----------------
+                    Telefone
+                    ---------------*@
+                    <div style="margin-top: 5px; margin-left: 20px; height: 20px; font-weight: bold">
+                        @Html.LabelFor(m => m.corretor.telefone)
+                    </div>            
+                    <div style="margin-left: 20px; height: 15px">
+                        @Html.TextBoxFor(m => m.corretor.telefone, new { @class = "text-box-300-upper", @maxlength = "13", @onkeypress="return Mascara(this);" })
+                    </div>       
+                    <div style="margin-left: 20px; height: 15px; padding-top: 8px">
+                        @Html.ValidationMessageFor(m => m.corretor.telefone, "", new { @class = "font-validation" })
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div style="width: 330px; float: left">
+                    @*----------------
+                    email
+                    ---------------*@
+                    <div style="margin-top: 5px; margin-left: 20px; height: 20px; font-weight: bold">
+                        @Html.LabelFor(m => m.corretor.email)
+                    </div>            
+                    <div style="margin-left: 20px; height: 15px">
+                        @Html.TextBoxFor(m => m.corretor.email, new { @class = "text-box-300-lower", @maxlength = "200" })
+                    </div>       
+                    <div style="margin-left: 20px; height: 15px; padding-top: 8px">
+                        @Html.ValidationMessageFor(m => m.corretor.email, "", new { @class = "font-validation" })
+                    </div>
+                </div>
+                <div style="width: 330px; float: left">
+                    @*----------------
+                    indexEscala
+                    ---------------*@
+                    <div style="margin-top: 5px; margin-left: 20px; height: 20px; font-weight: bold">
+                        @Html.LabelFor(m => m.corretor.indexEscala)
+                    </div>            
+                    <div style="margin-left: 20px; height: 15px">
+                        @Html.TextBoxFor(m => m.corretor.indexEscala, new { @class = "text-box-300", @maxlength = "2", @onkeypress="return numeros();" })
+                    </div>       
+                    <div style="margin-left: 20px; height: 15px; padding-top: 8px">
+                        @Html.ValidationMessageFor(m => m.corretor.indexEscala, "", new { @class = "font-validation" })
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div style="width: 330px; float: left">
+                    @*----------------
+                    Situação
+                    ---------------*@
+                    <div style="margin-top: 5px; margin-left: 20px; height: 20px; font-weight: bold">
+                        @Html.LabelFor(m => m.corretor.situacao)
+                    </div>            
+                    <div style="margin-left: 20px; height: 15px">
+                        @Html.DropDownListFor(m => m.corretor.situacao, (IEnumerable<SelectListItem>)ViewBag.drpSituacao, new { @style = "width: 300px" })
+                    </div>       
+                    <div style="margin-left: 20px; height: 15px; padding-top: 8px">
+                        @Html.ValidationMessageFor(m => m.corretor.situacao, "", new { @class = "font-validation" })
+                    </div>
+                </div>
+                <div style="width: 330px; float: left">
+                    @*----------------
+                    Senha
+                    ---------------*@
+                    <div style="margin-top: 5px; margin-left: 20px; height: 20px; font-weight: bold">
+                        @Html.LabelFor(m => m.corretor.senha)
+                    </div>            
+                    <div style="margin-left: 20px; height: 15px">
+                        @Html.TextBoxFor(m => m.corretor.senha, new { @class = "text-box-300", @maxlength="20" })
+                    </div>       
+                    <div style="margin-left: 20px; height: 15px; padding-top: 8px">
+                        @Html.ValidationMessageFor(m => m.corretor.senha, "", new { @class = "font-validation" })
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div id="div-foto" style="width: 700px; float: left">
+                    @Html.HiddenFor(m => m.corretor.foto);
+                    @Html.Partial("EditPic", Model)
+                </div>
+            </div>
+            <div>
+                <div style="width: 700px; float: left; height: 50px">
+                    <div style="margin-top: 5px; margin-left: 20px; height: 20px; font-weight: bold">
+                        <input type="submit" value="Alterar" class="button" />
+                        <input type="button" value="Fechar" class="button" onclick="retorna();" />
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("Mensagem", Model);
+}
+
+<script type="text/javascript">
+
+    function retorna() {
+        call('@Url.Content("~/Corretores/Browse")');
+    }
+
+    function numeros() {
+
+        if (document.all) // Internet Explorer  
+            var tecla = event.keyCode;
+        else if (document.layers) // Nestcape  
+            var tecla = e.which;
+        else if (document.getElementsByTagName("*"))
+            var tecla = event.keyCode;
+        if ((tecla > 47 && tecla < 58)) // numeros de 0 a 9  
+            return true;
+        else {
+            if (tecla != 8) // backspace  
+                //event.keyCode = 0;  
+                return false;
+            else
+                return true;
+        }
+    }
+
+    function Mascara(objeto) {
+        if (numeros(objeto)) {
+            if (objeto.value.length == 0)
+                objeto.value = '(' + objeto.value;
+
+            if (objeto.value.length == 3)
+                objeto.value = objeto.value + ')';
+
+            if (objeto.value.length == 8)
+                objeto.value = objeto.value + '-';
+            return true;
+        }
+        else
+            return false;
+    }
+
+
+
+</script>

@@ -1,0 +1,136 @@
+﻿@model IList<PinheiroSereni.Negocio.Repositories.ControlPanel.Report.Rpt02Repository>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Estatística de Atendimentos</title>
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-2.5.3.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/funcoes.js")"></script>
+    <script src="@Url.Content("~/Scripts/MicrosoftAjax.js")" type="text/javascript"></script>     
+    <script src="@Url.Content("~/Scripts/MicrosoftMvcAjax.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/MicrosoftMvcValidation.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.maskedinput-1.2.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
+</head>
+<body>
+<div id="imprimir">
+        <table style="width: 100%; border: 1px; font-family: tahoma; font-size: 9px; margin: 0px 0px 0px 0px" cellspacing="0">
+            <tr>
+                <td style="font-size: 10px; font-weight: bold; border-color: White; margin: 0px 0px 0px 0px; width: 100%; text-align: center; vertical-align: middle; border-bottom: 1px solid #808080; padding: 0px !important" colspan="5">
+                    @if (Model.Count() > 0)
+                    {
+                        if (Model.First().empreendimentoId == 1)
+                        {
+                            <img src="../Content/themes/base/images/painel/PizzaToscanaPequeno.png" alt="" /><br /> <br /> 
+                        }
+                        else
+                        {
+                            <img src="../Content/themes/base/images/painel/SanGenaroPequeno.png" alt="" /><br /> <br /> 
+                        }
+                    }                  
+                    ESTATÍSTICA DE ATENDIMENTOS <br />
+                    PERÍODO: @ViewBag.dt_inicio à @ViewBag.dt_fim <br />
+                    CORRETOR: @ViewBag.nome_corretor
+                </td>
+            </tr>
+            <tr style="font-weight: bold">
+                <td style="width: 90px; text-align: center; border-bottom: 1px solid #808080">
+                    OCORRÊNCIA
+                </td>
+                <td style="width: 100px; text-align: center; border-bottom: 1px solid #808080">
+                    FOLDER <br />DIGITAL
+                </td>
+                <td style="width: 100px; text-align: center; border-bottom: 1px solid #808080">
+                    ATENDIMENTO <br />EMAIL
+                </td>
+                <td style="width: 100px; text-align: center; border-bottom: 1px solid #808080">
+                    CHAT
+                </td>
+                <td style="width: 100px; text-align: center; border-bottom: 1px solid #808080">
+                    LIGAMOS <br /> PARA VOCÊ
+                </td>
+            </tr>
+        @foreach (var item in Model.Where(m => m.dt_cadastro.HasValue))
+        {
+            <tr>
+                <td style="text-align: center; font-size: 12px">
+                    @item.dt_cadastro.Value.ToString("dd/MM/yyyy") 
+                </td>
+                <td style="text-align: center; font-size: 12px">
+                    @(item.qteFolderDigital > 0 ? @item.qteFolderDigital.Value.ToString() : "-")
+                </td>
+                <td style="text-align: center; font-size: 12px">
+                     @(item.qteAtendimentoEmail > 0 ? @item.qteAtendimentoEmail.Value.ToString() : "-")
+                </td>
+                <td style="text-align: center; font-size: 12px">
+                    @(item.qteChat > 0 ? @item.qteChat.Value.ToString() : "-")
+                </td>
+                <td style="text-align: center; font-size: 12px">
+                    @(item.qteSms > 0 ? @item.qteSms.Value.ToString() : "-")
+                </td>
+            </tr>
+        }
+            <tr>
+                <td style="text-align: center; font-size: 12px; border-top: 1px solid #808080">
+                    <b>TOTAL GERAL:</b>
+                </td>
+                <td style="text-align: center; font-size: 12px; border-top: 1px solid #808080">
+                    <b>@Model.Where(m => !m.dt_cadastro.HasValue).FirstOrDefault().qteFolderDigital.Value.ToString("###,##0")</b>
+                </td>
+                <td style="text-align: center; font-size: 12px; border-top: 1px solid #808080">
+                    <b>@Model.Where(m => !m.dt_cadastro.HasValue).FirstOrDefault().qteAtendimentoEmail.Value.ToString("###,##0")</b>
+                </td>
+                <td style="text-align: center; font-size: 12px; border-top: 1px solid #808080">
+                    <b>@Model.Where(m => !m.dt_cadastro.HasValue).FirstOrDefault().qteChat.Value.ToString("###,##0")</b>
+                </td>
+                <td style="text-align: center; font-size: 12px; border-top: 1px solid #808080">
+                    <b>@Model.Where(m => !m.dt_cadastro.HasValue).FirstOrDefault().qteSms.Value.ToString("###,##0")</b>
+                </td>
+            </tr>
+        </table>
+        <div style="border-bottom: 1px solid #808080"></div>
+    </div>
+    <br />
+    <div style="width: 100%; text-align: left">
+    <input type="button" value="Imprimir" class="button" onclick="printDiv();" />  
+    <input type="button" value="Fechar" class="button" onclick="closeDetail(this)" />  
+    </div>
+
+<script type="text/javascript">
+
+    function imp(obj) {
+
+
+    }
+
+    function closeDetail() {
+        window.close();
+    }
+
+    function printDiv() {
+        var cabec = "<head><meta content=\"text/html; charset=utf-8\" http-equiv=\"Content-Type\" >" +
+                      "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" >" +
+                      "<title></title>" +
+                      "<style type=\"text/css\" media=\"print\">  " +
+                      "</style>" +
+                      "<div>";
+
+
+        var texto = cabec + $('#imprimir').html() + "</div>";
+        var w = window.open('');
+        w.document.write(texto);
+        w.document.close();
+        w.focus();
+        w.print();
+        w.close();
+    }
+
+</script>
+</body>
+</html>

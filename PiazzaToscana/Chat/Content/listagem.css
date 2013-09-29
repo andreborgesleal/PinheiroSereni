@@ -1,0 +1,160 @@
+﻿/* Elementos de Listagem*/
+
+.topoGridCenter
+{
+  font-family:Tahoma; font-size:11px; font-weight:bold;padding: 2px 5px; text-align: center; background-color: #eee0de; color: #685511;
+}
+
+.topoGridLeft
+{
+  font-family:Tahoma; font-size:11px;height:20px; font-weight:bold;padding: 2px 0px; text-align: left; background-color: #eee0de;  color: #685511; 
+  
+}
+.topoGridRight
+{
+  font-family:Tahoma; font-size:11px; font-weight:bold;padding: 2px 5px; text-align: right; background-color: #eee0de;color: #685511; 
+}
+.paginacao 
+{
+    padding: 6px 5px; text-align: center; background-color: #BADCCB; border: solid 1px #CCC; font-family: Verdana; font-size: 10px; color: #666; 
+}
+.itemGridLeft, .itemGridLeft td
+{
+    font-family:Tahoma; font-size:11px; font-weight:normal; text-align: left; height: 15px; vertical-align: top; color:#685511; padding-left:1px;
+}
+.itemGridRight
+{
+     font-family:Tahoma; font-size:11px; font-weight:normal; text-align: right; padding: 2px 5px; height: 15px; vertical-align: top; color:#685511;
+}
+.itemGridCenter
+{
+    font-family:Tahoma; font-size:11px; font-weight:normal;  text-align: center; padding: 2px 5px; height: 15px; vertical-align: top; color:#685511; width: 200px
+}
+
+.acaoGrid {
+    padding: 0px 10px 0 0; width:10%; height:18px;
+}
+
+
+
+
+/* BOTOES DE EDITAR,VISUALIZAR E EXCLUIR*/
+
+
+.buttons-sub-list ,.buttons-sub-list-aba {
+    float:left;
+    height:auto;
+    background: url(themes/base/images/bg_botao.gif) repeat-x;
+    background-color:#fedd9a;
+    width: 100%;
+    padding:10px 0 10px 0 ;
+    /*display:block !important;	
+*/
+} 
+
+a.link-button
+{   width auto;
+    font-family: Tahoma;
+    font-size: 11px;
+    font-weight: bold;
+    color: #333333;
+    background-color: #F8FEF0;
+    border-width:2px;
+    border-style:ridge;
+    border-top-color: #F2F2F2;
+    border-right-color: #EBEBEB;
+    border-bottom-color: #EBEBEB;
+    border-left-color: #F3F3F3;
+    float:left;
+    margin:10px 0 0 10px;
+    padding:2px 20px 2px 20px;
+    }
+
+
+
+a.link-button:link{
+    text-decoration:none; 
+    background-color:#FFFFFF;
+}
+
+a.link-button:hover{
+    text-decoration:none; 
+}
+
+a.link-button:visited{
+    text-decoration:none; 
+}
+
+.link-editar ,.link-editar-aba ,.link-detalhar,.link-detalhar-aba,.link-excluir,.link-excluir-aba 
+{
+    width: 16px;
+    height: 16px;
+    color: #fc6060 !important;
+    font-family: Tahoma;
+    font-size: 10px;
+    text-decoration: underline;
+    /*display:block !important;	
+*/
+    vertical-align: middle;
+    float: left;
+    margin:0 0 0 10px;
+    padding:0; 
+    background-color:White;
+    text-align: right; 
+    font-weight: normal;
+}
+
+.link-editar,.link-editar-aba {background: url(../Content/themes/base/images/painel/ico-edit.gif) no-repeat center; }
+
+.link-detalhar,.link-detalhar-aba {background: url(../Content/themes/base/images/painel/ico-detalhar.gif) no-repeat center; }
+
+.link-excluir ,.link-excluir-aba {background: url(../Content/themes/base/images/painel/ico-del.gif) no-repeat center; }
+
+
+/* tables */
+table.tablesorter {
+	font-family:Tahoma;
+	background-color: #fc6060 !important;
+	margin:0;
+	width: 275px;
+	text-align: left;
+}
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+	background-color: #eee0de;
+	border: 1px solid #FFF;
+	font-size: 8pt;
+	padding: 4px;
+    width: 275px;
+}
+table.tablesorter thead tr .header {
+	background-image: url(../Content/themes/base/images/painel/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;	
+}
+table.tablesorter tbody td {
+	color: #3D3D3D;
+	padding: 4px;
+	background-color: #FFF;
+	vertical-align: top;
+	font-size:10px;
+	width:auto;
+}
+table.tablesorter tbody tr.odd td {
+	background-color:#FFF;    font-family:Tahoma; font-size:11px; font-weight:normal; text-align: left; height: 18px; vertical-align: top; color:#685511; padding-left:1px;
+
+}
+table.tablesorter tbody tr.even td {
+	background-color:#DBDBDB;    font-family:Tahoma; font-size:11px; font-weight:normal; text-align: left; height: 18px; vertical-align: top; color:#685511; padding-left:1px;
+
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(../Content/themes/base/images/painel/asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(../Content/themes/base/images/painel/desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+background-color: #BADCCB;
+}
+

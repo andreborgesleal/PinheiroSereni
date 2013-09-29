@@ -1,0 +1,84 @@
+﻿@model System.Web.Mvc.PagedList<PinheiroSereni.Negocio.Repositories.ControlPanel.Report.Rpt02Repository>
+@{
+    ViewBag.Title = "Painel de Controle";
+}
+@{
+    Layout= null;
+}           
+
+<div class="div-table-list" style="margin-top: 170px">
+    <table  id="table-sort" class="tablesorter" style="width: 100%">
+        <thead>
+            <tr>
+                <th style="width: 90px; text-align: center">
+                    OCORRÊNCIA
+                </th>
+                <th style="width: 100px; text-align: center">
+                    FOLDER <br />DIGITAL
+                </th>
+                <th style="width: 100px; text-align: center">
+                    ATENDIMENTO <br />EMAIL
+                </th>
+                <th style="width: 100px; text-align: center">
+                    CHAT
+                </th>
+                <th style="width: 100px; text-align: center">
+                    LIGAMOS <br /> PARA VOCÊ
+                </th>
+            </tr>
+        </thead>
+    @foreach (var item in Model.Where(m => m.dt_cadastro.HasValue))
+    {
+        <tbody>
+        <tr id="linha" style="cursor: pointer" onmouseover="javascript:TarjaIn(this);" onmouseout="javascript:TarjaOut(this);">
+            <td style="text-align: center; font-size: 12px">
+                @item.dt_cadastro.Value.ToString("dd/MM/yyyy") 
+            </td>
+            <td style="text-align: center; font-size: 12px">
+                @(item.qteFolderDigital > 0 ? @item.qteFolderDigital.Value.ToString() : "-")
+            </td>
+            <td style="text-align: center; font-size: 12px">
+                 @(item.qteAtendimentoEmail > 0 ? @item.qteAtendimentoEmail.Value.ToString() : "-")
+            </td>
+            <td style="text-align: center; font-size: 12px">
+                @(item.qteChat > 0 ? @item.qteChat.Value.ToString() : "-")
+            </td>
+            <td style="text-align: center; font-size: 12px">
+                @(item.qteSms > 0 ? @item.qteSms.Value.ToString() : "-")
+            </td>
+        </tr>
+	    </tbody>
+    }
+
+    @if (Model.PageIndex == Model.LastPage)
+    {
+        <tbody>
+        <tr id="linha" style="cursor: pointer;" onmouseover="javascript:TarjaIn(this);" onmouseout="javascript:TarjaOut(this);">
+            <td style="text-align: center; font-size: 12px">
+                <b>TOTAL GERAL:</b>
+            </td>
+            <td style="text-align: center; font-size: 12px">
+                <b>@Model.Where(m => !m.dt_cadastro.HasValue).FirstOrDefault().qteFolderDigital.Value.ToString("###,##0")</b>
+            </td>
+            <td style="text-align: center; font-size: 12px">
+                <b>@Model.Where(m => !m.dt_cadastro.HasValue).FirstOrDefault().qteAtendimentoEmail.Value.ToString("###,##0")</b>
+            </td>
+            <td style="text-align: center; font-size: 12px">
+                <b>@Model.Where(m => !m.dt_cadastro.HasValue).FirstOrDefault().qteChat.Value.ToString("###,##0")</b>
+            </td>
+            <td style="text-align: center; font-size: 12px">
+                <b>@Model.Where(m => !m.dt_cadastro.HasValue).FirstOrDefault().qteSms.Value.ToString("###,##0")</b>
+            </td>
+        </tr>
+	    </tbody>
+    }
+    </table>
+    
+    
+    @if (Model.Count > 0)
+    {
+        @Html.Partial("Paginacao", Model)
+    }
+</div>
+    
+    

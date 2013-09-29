@@ -1,0 +1,37 @@
+﻿@model PinheiroSereni.Negocio.Repositories.Chat.LoginChatRepository
+@{
+    ViewBag.Title = "Chat";
+}
+@using (Html.BeginForm())
+{
+    <div style="width: 50%; height: 600px; float: left" >
+        <div class="logo-acesso2" style="float: left; width: 253px; height: 160px; margin-left: 50%; margin-top: 130px"></div>
+    </div>
+    <div class="logo-acesso3" style="width: 50%; color: #000; height: 600px; float: right">
+        <div style="margin-top: 50px; margin-left: 120px; height: 25px; font-family: Tahoma; font-size: 14px; font-weight: bold; color: #f00">ACESSO</div>            
+        <div style="margin-top: 0px; margin-left: 120px; height: 15px; font-family: Tahoma; font-size: 11px; color: #1ea169">Para acessar o chat,</div>            
+        <div style="margin-top: 0px; margin-left: 120px; height: 15px; font-family: Tahoma; font-size: 11px; color: #1ea169">informe abaixo o seu ID e senha</div>     
+        <div style="margin-top: 30px; margin-left: 40px; height: 20px; font-weight: bold">
+            @Html.LabelFor(m => m.corretorId)
+        </div>            
+        <div style="margin-left: 40px; height: 20px">
+            @Html.TextBoxFor(m => m.corretorId, new { @class = "text-box-250", @onkeypress = "return numeros(this);" })
+        </div>       
+        <div style="margin-left: 40px; height: 30px; padding-top: 5px">
+            @Html.ValidationMessageFor(m => m.corretorId,"",new { @class = "font-validation" })
+        </div>
+        <div style="margin-top: 0px; margin-left: 40px; height: 20px; font-weight: bold">@Html.LabelFor(m => m.senha)</div>            
+        <div style="margin-left: 40px; height: 20px">
+            @Html.PasswordFor(m => m.senha, new { @class = "text-box-250"})
+        </div>            
+        <div style="margin-left: 40px; height: 30px; height: 20px; padding-top: 5px">
+            @Html.ValidationMessageFor(m => m.senha,"",new { @class = "font-validation" })
+        </div>
+        <div style="margin-left: 40px; height: 40px"><input type="submit" id="btnEntrar" class="button" value="Entrar" /></div>
+        <div style="margin-top: 10px; margin-left: 40px; height: 50px; color: #808080; font-family: Cambria; font-size: 10px; text-align: justify; width: 255px">
+            O chat permite que o operador possa realizar através da internet o contato com os clientes para esclarecimento de dúvidas e proceder as ações 
+            comerciais para divulgação do empreendimento, realizar agendamentos com o cliente e apresentar proposta comercial das unidades disponíveis para venda
+        </div>  
+    </div>
+    @Html.Partial("Mensagem", Model);
+}

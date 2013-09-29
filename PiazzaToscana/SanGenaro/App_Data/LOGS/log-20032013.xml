@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LOG>
+  <LOG ID="1293206989" Data="20/03/2013 16:56:49">
+    <Sessao>rqg23sda4qzyhfdlnf5bfonp</Sessao>
+    <IP>::1</IP>
+    <HostName>ANDRE-VAIO\André</HostName>
+    <Mensagem>No connection string named 'PinheiroSereniContext' could be found in the application config file.</Mensagem>
+    <NameSpace>PinheiroSereni.Negocio.Roles.Inscricao =&gt; </NameSpace>
+    <Context>prospect.nome="Claudio palermo",sobreNome="oliveira",prospect.email="claudio.palermo@oliver.com.br"</Context>
+    <StackTrace />
+  </LOG>
+</LOG>

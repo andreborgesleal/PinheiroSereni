@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = "Piazza Toscana";
+}
+<div id="divCarregando" style="float: left; width: 200px; color: #000; font-family: Tahoma; font-size: 12px; border-radius: 5px">
+    <div class="fundoModal" onclick="closeDetail('divFotos');">
+    </div>
+    <div class="modalPopupImg">
+        <div id="printImg" >
+            <img style="width: auto; height: auto" id="fotoId" src="@ViewBag.Imagem" alt="texto" />
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //var img;
+    //img = document.getElementById("carregando");
+    //img.style["visibility"] = "hidden";
+</script>

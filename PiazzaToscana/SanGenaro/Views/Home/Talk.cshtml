@@ -1,0 +1,105 @@
+﻿@model PinheiroSereni.Negocio.Repositories.Chat.ChatRepository
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+@{
+    ViewBag.Title = "San Gennaro";
+}
+
+@using (Html.BeginForm())
+{
+    
+    <div id="divCad">
+        <div class="fundoModal">
+        </div>
+        <div class="modalPopupCad" style="font-family: Verdana; color: #000000; font-size: 10px;">
+            <div style="height: auto; margin-top: 0px; width: auto; float: left; padding-top: 5px; padding-left: 5px">
+                <img src="~/../../content/themes/base/images/SanGenaro/logosangennaro_pequeno.png" alt="" />
+            </div> 
+            <div style="width: 100%">
+                
+                <div style="float: right; height: 180px; padding: 10px; cursor: pointer">
+                    <img src="../content/themes/base/images/SanGenaro/x.png" alt="" onclick="end();" />
+                </div>
+                <div style="font-family: Tahoma; font-weight: bold; font-size: 18px; color: #52658C; height: 20px; text-align: right; padding-top: 40px; padding-right: 60px; margin-top: 20px">
+                    Corretor&nbsp;<span style="color: #3F4C68">Online</span>
+                </div>
+                <div style="background-image: url(../content/themes/base/images/SanGenaro/flamula.png); background-repeat: no-repeat; height: 60px; width: auto; margin-top: 13px">
+                    &nbsp;
+                </div>
+            </div>
+            <div style="width: 100%">    
+                <div style="width: 170px; float: left; margin-top: 24px; line-height: 18px">
+                    <div style="width: 165px; margin-left: auto; margin-right: auto;">
+                        @{
+                            string path = Model.path_fotoCorretor + Model.corretor.foto;
+                            }
+                        <img src='@path' alt="" style="padding: 3px; border-radius: 8px; border: 2px solid #cac4c4" />
+                    </div>
+                    <div style="margin-left: auto; margin-top: 5px; font-weight: bold; width: 165px">
+                        @Model.corretor.nome    
+                    </div> 
+                    <div style="margin-left: auto; font-weight: bold; width: 165px">
+                        @Model.corretor.setor
+                    </div> 
+                    <div style="margin-left: auto; font-weight: bold; width: 165px">
+                        @PinheiroSereni.Library.Funcoes.FormataTelefone(Model.corretor.telefone)
+                    </div> 
+                    <div style="margin-left: auto; font-weight: bold; width: 165px">
+                        E-Mail
+                    </div> 
+                    <div style="margin-left: auto; font-weight: bold; width: 165px; font-weight: normal !important">
+                        @Model.corretor.email
+                    </div> 
+                </div>
+                <div style="width: 365px; float: left; margin-top: 0px">
+                    <div id="div-cliente" style="margin-left: 0px; font-weight: bold; width: 360px">
+                        @Html.Partial("Listening", Model)                       
+                    </div>
+                    <div style="margin-top: 10px; margin-left: 0px; width: 360px;">
+                        @Html.TextArea("mensagem_cliente", "", new { @class = "text-area-mens" })
+                    </div>  
+                    <div style="float: left; margin-top: 10px; margin-left: 0px; width: 360px; height: 40px">
+                        <input type="button" id="btnMensagem" value="Enviar" onclick="send();" style="border-radius: 5px; background-color: #3F4C68; color: #fff; width: 150px; font-weight: bold; float: left" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+
+    setInterval("AutoRefresh()", 10000);
+
+    function AutoRefresh() {
+        var _isOnline = document.all.item("isOnline");
+        if (_isOnline.value == 'S') {
+            var link = '@Url.Action("Listening", new { id = Model.chat.chatId })';
+            link = encodeURI(link + '?mensagem=ttttt');
+            $('#div-cliente').load(link);
+        }
+
+    }
+
+    function send() {
+        var xxx = document.all.item("mensagem_cliente");
+        var _isOnline = document.all.item("isOnline");
+        if (xxx.value != '' && _isOnline.value == 'S') {
+            var link = '@Url.Action("Send", new { id = Model.chat.chatId })';
+            link = encodeURI(link + '?mensagem=' + xxx.value);
+            xxx.value = '';
+            $('#div-cliente').load(link);
+        }
+    }
+
+    function end() {
+        var _isOnline = document.all.item("isOnline");
+        if (_isOnline.value == 'S') {
+            var link = encodeURI('@Url.Action("End", new { id = Model.chat.chatId })');
+            $('#div-cliente').load(link);
+        }
+        window.location = 'index';
+    }
+
+</script>

@@ -1,0 +1,79 @@
+﻿@model System.Web.Mvc.PagedList<PinheiroSereni.Negocio.Repositories.ControlPanel.CorretorRepository>
+@{
+    ViewBag.Title = "Painel de Controle";
+}
+@{
+    Layout= null;
+}           
+
+<div class="div-header-list">
+    Cadastro de Corretores
+</div>
+@using (Ajax.BeginForm(new AjaxOptions{ HttpMethod="Post" }))
+{
+<div class="div-table-list">
+    <table  id="table-sort" class="tablesorter" style="width: 100%">
+        <thead>
+            <tr>
+                <th style="width: 50px"></th>
+                <th style="width: 50px; text-align: center">
+                    CÓDIGO
+                </th>
+                <th style="width: 200px">
+                    CORRETOR
+                </th>
+                <th style="width: 200px">
+                    E-MAIL
+                </th>
+                <th style="width: 75px; text-align: center">
+                    TELEFONE
+                </th>
+                <th style="width: 50px; text-align: center">
+                    ESCALA
+                </th>
+                <th style="width: 50px; text-align: center">
+                    SITUAÇÃO
+                </th>
+            </tr>
+        </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+        <tr id="linha" style="cursor: pointer;" onmouseover="javascript:TarjaIn(this);" onmouseout="javascript:TarjaOut(this);">
+            <td>            
+                @Ajax.ActionLink(" ", "Edit", "Corretores", new { id = item.corretor.corretorId }, new AjaxOptions { HttpMethod = "Post" }, new { @class = "link-editar", @title="Editar" })
+                @Ajax.ActionLink(" ", "Delete", "Corretores", new { id = item.corretor.corretorId }, new AjaxOptions { HttpMethod = "Post" }, new { @class = "link-excluir", @title="Excluir" })
+            </td>
+            <td style="text-align: center">
+                @item.corretor.corretorId
+            </td>
+            <td>
+                @item.corretor.nome
+            </td>
+            <td>
+                @item.corretor.email
+            </td>
+            <td style="text-align: center">
+                @item.corretor.telefone
+            </td>
+            <td style="text-align: center">
+                @item.corretor.indexEscala
+            </td>
+            <td style="text-align: center">
+                @item.corretor.situacao
+            </td>
+        </tr>
+	    </tbody>
+    }
+
+    </table>
+    
+    
+    @if (Model.Count > 0)
+    {
+        @Html.Partial("Paginacao", Model)
+    }
+</div>
+}
+    
+    

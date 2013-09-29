@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Crud.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/listagem.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-2.5.3.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/funcoes.js")"></script>
+    <script src="@Url.Content("~/Scripts/MicrosoftAjax.js")" type="text/javascript"></script>     
+    <script src="@Url.Content("~/Scripts/MicrosoftMvcAjax.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/MicrosoftMvcValidation.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.maskedinput-1.2.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
+</head>
+<body style="background-color: #fff">
+    <div class="page">
+        <div class="win8-tools">
+            <div style="float: left; margin-left: 50px; padding-top: 3px">Chat</div>
+
+        </div>
+    </div>
+    <div class="wall-paper" style="border: 1px solid #fff">
+        @RenderBody()
+        <div id="carregando" style="visibility: hidden; width: 1024px; margin-left: auto; margin-right: auto; position: relative">
+            Carregando...
+            <img alt="Carregando" style="margin-top:-40px" src="@Url.Content("~/Content/themes/base/images/painel/ajax-loader.gif")" /><br />
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+    //if (document.all) // Internet Explorer  
+    //{
+    //    document.getElementById("li4").style["padding-left"] = "20px";
+    //    document.getElementById("li5").style["padding-left"] = "20px";
+    //    document.getElementById("li6").style["padding-left"] = "20px";
+    //    document.getElementById("li7").style["padding-left"] = "20px";
+    //}
+    //else if (document.layers) // Nestcape  
+    //    var tecla = e.which;
+    //else if (document.getElementsByTagName("*"))
+    //    var tecla = event.keyCode;
+
+    function call(method) {
+        window.location = method;
+    }
+
+    function SombraIn(obj) {
+        obj.style["background-color"] = "#f2ebeb";
+    }
+
+    function SombraOut(obj) {
+        obj.style["background-color"] = "#fff";
+    }
+
+    function Display(obj) {
+        document.getElementById(obj).style["visibility"] = "visible";
+
+        if (obj == 'menu1') {
+            document.getElementById('divCad').style["background-color"] = "#d02929";
+            document.getElementById(obj).style["height"] = "153px";
+            Esconde('menu2');
+        }
+        else {
+            document.getElementById('divRep').style["background-color"] = "#d02929";
+            document.getElementById(obj).style["height"] = "146px";
+            Esconde('menu1');
+        }
+    }
+    function Esconde(obj) {
+        document.getElementById(obj).style["visibility"] = "hidden";
+        document.getElementById(obj).style["height"] = "0px";
+        if (obj == 'menu1')
+            document.getElementById('divCad').style["background-color"] = "#ff0000";
+        else
+            document.getElementById('divRep').style["background-color"] = "#ff0000";
+    }
+</script>

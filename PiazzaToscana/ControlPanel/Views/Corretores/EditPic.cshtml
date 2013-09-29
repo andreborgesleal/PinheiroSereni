@@ -1,0 +1,40 @@
+﻿@model PinheiroSereni.Negocio.Repositories.ControlPanel.CorretorRepository
+@{
+    ViewBag.Title = "Painel de Controle";
+}
+@{
+    Layout = null;
+}
+
+    <div style="width: auto; float: left; height: auto; margin-left: 20px">
+        <img id="fotoCorretor" src="@Path.Combine(Url.Content("~/Content/themes/base/images/uploads"), Model.corretor.foto)" alt="" border="0" /> 
+    </div>
+    <div style="width: 330px; float: left; padding-top: 50px">
+        @*----------------
+        foto
+        ---------------*@
+        <div style="margin-top: 5px; margin-left: 20px; height: 20px; font-weight: bold">
+            @Html.LabelFor(m => m.corretor.foto)
+        </div>            
+        <div style="margin-left: 20px; height: 15px">
+            <input type="file" id="foto" name="foto" class="text-box-300" accept="gif|jpg|pdf" />
+        </div>       
+        <div style="margin-left: 20px; height: 15px; padding-top: 8px">
+            @Html.ValidationMessageFor(m => m.corretor.foto, "", new { @class = "font-validation" })
+        </div>
+        <div style="margin-left: 20px; height: 15px">
+            @if (Model.corretor.foto != "CorretorNulo.png")
+            {
+                <a href="#" onclick="LimparFoto();" style = "color: #808080; text-decoration: none;">Limpar Foto</a>
+            }
+        </div>       
+    </div>
+
+<script type="text/javascript">
+
+    function LimparFoto() {
+        document.getElementById("corretor_foto").value = "CorretorNulo.png";
+        document.getElementById("fotoCorretor").src = "@Url.Content("~/Content/themes/base/images/uploads/CorretorNulo.png")";
+    }
+
+</script>

@@ -1,0 +1,36 @@
+﻿@model PinheiroSereni.Negocio.Repositories.ProspectRepository
+
+@{
+    ViewBag.Title = "Piazza Toscana";
+}
+@using (Html.BeginForm())
+{
+    <div style="padding-left: 20px; font-family: Verdana; color: #fff; font-size: 11px; width: 285px">
+        <div style="font-weight: normal !important">
+            @Html.LabelFor(m => m.prospect.nome)
+        </div>
+        <div style="height: 50px; padding-top: 3px">
+            @Html.TextBoxFor(m => m.prospect.nome, new { @style = "width: 270px; border-radius: 4px; text-transform: uppercase", @maxlength = "50" })
+            <div style="color: #fff; font-size: 11px; padding-top: 2px">@Html.ValidationMessageFor(m => m.prospect.nome,"",new { @style = "color: #000" })</div>
+        </div>
+        <div style="font-weight: normal !important">
+            @Html.LabelFor(m => m.sobreNome)
+        </div>
+        <div style="height: 50px; padding-top: 3px">
+            @Html.TextBoxFor(m => m.sobreNome, new { @style = "width: 270px; border-radius: 4px; text-transform: uppercase", @maxlength = "50" })
+            <div style="color: #fff; font-size: 11px; padding-top: 2px">@Html.ValidationMessageFor(m => m.sobreNome,"",new { @style = "color: #000" })</div>
+        </div>
+        <div style="font-weight: normal !important">
+            @Html.LabelFor(m => m.prospect.email)
+        </div>
+        <div style="height: 50px; padding-top: 3px">
+             @Html.TextBoxFor(m => m.prospect.email, new { @style = "width: 270px; border-radius: 4px; text-transform: lowercase", @maxlength = "200" })
+             <div style="color: #fff; font-size: 11px; padding-top: 2px">@Html.ValidationMessageFor(m => m.prospect.email,"",new { @style = "color: #000" })</div>
+        </div>
+        
+        <div style="float: right; padding-right: 11px; margin-top: -4px">
+             <input type="submit" id="btnEnviar" value="" style="border-radius: 5px; border: none; background-image: url(~/../../content/themes/base/images/PiazzaToscana/BtnEnviar.png); width: 123px; height: 29px" />
+        </div>
+    </div>
+    @Html.Partial("Mensagem", Model);
+}

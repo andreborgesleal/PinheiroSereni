@@ -1,0 +1,60 @@
+﻿@model PinheiroSereni.Dominio.Control.Repository
+
+    @if (Model != null)
+    {
+        if (Model.mensagem != null)
+        {
+            if (Model.mensagem.Code > 0)
+            {
+                <input type="hidden" id="msgError" name="msgError" value="'@Model.mensagem.Message'" />
+            }
+        }
+    }
+    else if (ViewBag.Sucesso != null)
+        {
+            <input type="hidden" id="msgSucesso" name="msgError" value="'@ViewBag.Sucesso'" />
+        }
+    <div id="divError" style="float: left; width: 200px; color: #000; font-family: Tahoma; font-size: 12px; visibility: hidden; border-radius: 5px">
+        <div class="fundoModal">
+        </div>
+        <div class="modalPopup">
+            <div style="font-family: Verdana; font-weight: bold; font-size: 14px; color: #808080; height: 25px">Observação:</div>
+            <div style="height: 3px; width: auto; background-color: #f00">
+                &nbsp;
+            </div>
+            <div>
+                @Html.ValidationSummary("", new { @style = "color: #000" })
+                @if (Model != null)
+                {
+                    <div style="margin-left: 21px; font-size: 11px; color: #808080; text-align: justify; padding-right: 10px">@Model.mensagem.MessageBase</div>
+                }
+                <p></p>
+                <p></p>
+            </div>
+            <input type="button" value="Fechar" class="button" onclick="closeDetail('divError')" />
+        </div>
+    </div> 
+    <div id="divSucesso" style="float: left; width: 200px; color: #000; font-family: Tahoma; font-size: 12px; visibility: hidden; border-radius: 5px">
+        <div class="fundoModal">
+        </div>
+        <div class="modalPopup">
+            <div style="font-family: Verdana; font-weight: bold; font-size: 14px; color: #808080; height: 25px">Sucesso</div>
+            <div style="height: 3px; width: auto; background-color: #f00">
+                &nbsp;
+            </div>
+            <div>
+                <div style="margin-left: 21px; margin-top: 15px; font-size: 11px; color: #808080; text-align: center; padding-right: 10px">@ViewBag.Sucesso</div>
+                <p></p>
+                <p></p>
+            </div>
+            <input type="button" value="Fechar" class="button" onclick="closeDetail('divSucesso')" />
+        </div>
+    </div> 
+<script type="text/javascript">
+    if (document.getElementById("msgError") != null) {
+        document.getElementById("divError").style["visibility"] = "visible"
+    }
+    else if (document.getElementById("msgSucesso") != null) {
+        document.getElementById("divSucesso").style["visibility"] = "visible"
+    }
+</script>  
