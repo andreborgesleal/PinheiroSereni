@@ -10,6 +10,7 @@ using PinheiroSereni.Negocio.Repositories;
 using PinheiroSereni.Library;
 using System.Net.Mail;
 using System.Data.Common;
+using System.Linq;
 
 namespace PinheiroSereni.Negocio.Roles
 {
@@ -77,6 +78,39 @@ namespace PinheiroSereni.Negocio.Roles
                     #region identifica o corretor da vez
                     AtendimentoEmailRepository r = (AtendimentoEmailRepository)value;
                     CorretorOnline corretor = r.corretor.obterCorretor(db.Mensagems, db.CorretorOnlines);
+
+                    #region verifica se tem sessão ativa para o corretor da vez
+                    var _s = from s in db.Sessaos
+                             where s.corretorId == corretor.corretorId &&
+                                   s.dt_desativacao == null &&
+                                   s.statusOperador.Equals("O")
+                             select s;
+                    #endregion
+
+                    #region Se o corretor da vez não tiver sessão ativa, procurar o primeiro corretor que esteja online
+                    if (_s.Count() == 0)
+                    {
+                        _s = from s in db.Sessaos
+                             where s.dt_desativacao == null &&
+                                   s.statusOperador.Equals("O") &&
+                                   s.corretorId != null
+                             orderby s.CorretorOnline.indexEscala
+                             select s;
+
+                        if (_s.Count() == 0)
+                            throw new ArgumentNullException(); // não tem nenhum corretor online
+                        else if (_s.Where(m => m.CorretorOnline.indexEscala >= r.corretor.indexEscala).Count() > 0)
+                            _s = _s.Where(m => m.CorretorOnline.indexEscala >= r.corretor.indexEscala);
+                    }
+                    #endregion
+
+                    r.corretor = db.CorretorOnlines.Find(_s.First().corretorId);
+                    r.sessionId = _s.First().sessaoId;
+                    r.sessao = _s.First();
+
+
+
+
                     #endregion
 
                     #region insere a inscricao do cliente
