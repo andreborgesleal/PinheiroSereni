@@ -89,6 +89,8 @@ namespace PinheiroSereni.Negocio.Roles.Chat
                                         prospect = p,
                                         nome_cliente = p.nome,
                                         chat = ch,
+                                        typingClient = ch.typingClient,
+                                        typingOperator = ch.typingOperator,
                                         chatMessages = (from m in db.ChatMessages
                                                         where m.chatId == chatId
                                                         orderby m.dt_message
@@ -135,6 +137,8 @@ namespace PinheiroSereni.Negocio.Roles.Chat
                                                                     nome_cliente = p.nome,
                                                                     path_fotoCorretor = _path_fotoCorretor,
                                                                     chat = ch,
+                                                                    typingClient = ch.typingClient,
+                                                                    typingOperator = ch.typingOperator,
                                                                     nome_empreendimento = e.nomeEmpreendimento,
                                                                     chatMessages = (from m in db.ChatMessages
                                                                                     where m.chatId == ch.chatId
@@ -300,6 +304,9 @@ namespace PinheiroSereni.Negocio.Roles.Chat
                         message = text.Replace("'","")
                     };
                     db.ChatMessages.Add(msg);
+
+                    _TypingOperator(chatId, "N");
+
                     #endregion
 
                     #region atualiza sessao
@@ -352,6 +359,22 @@ namespace PinheiroSereni.Negocio.Roles.Chat
                     db.Entry(_chat).State = EntityState.Modified;
                 }
 
+                db.SaveChanges();
+            }
+        }
+
+        public void _TypingOperator(int chatId, string value)
+        {
+            PinheiroSereni.Dominio.Entidades.Chat chat = db.Chats.Find(chatId);
+            chat.typingOperator = value;
+            db.Entry(chat).State = EntityState.Modified;
+        }
+
+        public void TypingOperator(int chatId, string value)
+        {
+            using (db = new PinheiroSereniContext())
+            {
+                _TypingOperator(chatId, value);
                 db.SaveChanges();
             }
         }
@@ -492,7 +515,12 @@ namespace PinheiroSereni.Negocio.Roles.Chat
                         message = text.Replace("'","")
                     };
                     db.ChatMessages.Add(msg);
+
+                    _TypingClient(chatId, "N");
+
                     db.SaveChanges();
+
+
                     #endregion
 
                     return getRepository(chatId);
@@ -543,6 +571,22 @@ namespace PinheiroSereni.Negocio.Roles.Chat
             }
             return chatRepository;
 
+        }
+
+        private void _TypingClient(int chatId, string value)
+        {
+            PinheiroSereni.Dominio.Entidades.Chat chat = db.Chats.Find(chatId);
+            chat.typingClient = value;
+            db.Entry(chat).State = EntityState.Modified;
+        }
+
+        public void TypingClient(int chatId, string value)
+        {
+            using (db = new PinheiroSereniContext())
+            {
+                _TypingClient(chatId, value);
+                db.SaveChanges();
+            }
         }
         #endregion
 

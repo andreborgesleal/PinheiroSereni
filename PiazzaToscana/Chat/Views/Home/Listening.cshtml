@@ -121,6 +121,24 @@
         </table>
         
     </div>
+    <div style="width: auto; margin-top: 5px">
+        @if (Model != null)
+        {
+            if (Model.Where(j => j.isAtivo == "S").Count() > 0)
+            {
+                if (Model.Where(j => j.isAtivo == "S").First().typingClient == "S")
+                {
+                    <div style="width: auto">
+                        <span style="color: gray"><i>@Model.Where(j => j.isAtivo == "S").First().nome_cliente está escrevendo...</i></span>
+                    </div>
+                }
+                else
+                {
+                    <span>&nbsp;</span>
+                }
+            }
+         }
+    </div>
     <div style="margin-top: 10px; margin-left: 0px; width: 605px; overflow: scroll; background-color: #e0eee2; height: 255px; font-size: 9px; border: 1px solid #808080; padding-left: 5px; padding-bottom: 5px; padding-right: 5px; line-height: 18px !important">
         @if (Model != null)
         {

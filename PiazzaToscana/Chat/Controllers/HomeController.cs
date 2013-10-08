@@ -98,12 +98,25 @@ namespace Chat.Controllers
         }
 
         [System.Web.Mvc.OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
-        public ActionResult Listening(string id, int? chatId)
+        public ActionResult Listening(string id, int? chatId, string mensagem)
         {
             AccessDenied(System.Web.HttpContext.Current.Session.SessionID);
 
             ChatModel chat = new ChatModel();
             SessaoRepository r = (SessaoRepository)chat.getSessao(id, chatId);
+
+            if (chatId.HasValue)
+            {
+                if (TempData.Count == 0)
+                    TempData.Add("typing", "");
+
+                string mudou = TempData.Peek("typing").ToString() != mensagem ? "S" : "N";
+                chat.TypingOperator(chatId.Value, mudou);
+
+                TempData.Remove("typing");
+                TempData.Add("typing", mensagem);
+            }
+
             return View(r.chatRepositories);
         }
 
@@ -135,6 +148,9 @@ namespace Chat.Controllers
 
             ChatModel chat = new ChatModel();
             SessaoRepository r = (SessaoRepository)chat.Send(id, chatId, mensagem);
+
+            TempData.Remove("typing");
+
             return View(r.chatRepositories);
         }
     }

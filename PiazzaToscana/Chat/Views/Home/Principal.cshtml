@@ -52,7 +52,7 @@
                 @Html.Partial("Listening", Model.chatRepositories)
             </div>
             <div style="margin-top: 15px; margin-left: 0px; width: 700px;">
-                @Html.TextArea("mensagem_corretor","", new { @class = "text-area-mens" })
+                @Html.TextArea("mensagem_corretor","", new { @class = "text-area-mens", @onkeydown = "keyEnter()" })
             </div>  
             <div style="float: left; margin-top: 0px; margin-left: 0px; width: 700px">
                 <div style="margin-left: 0px; height: 0px"><input type="button" id="btnMensagem" class="button" value="Enviar" onclick="send();" /></div>  
@@ -63,18 +63,28 @@
 
 <script type="text/javascript">
 
-    setInterval("AutoRefresh()", 10000);
+    setInterval("AutoRefresh()", 2000);
 
     function AutoRefresh() {
         var chatId = $('#form0 #chatIdAtivo').val();
         if (chatId != 0) {
+            var xxx = document.all.item("mensagem_corretor");
             var link = '@Url.Action("Listening", new { id = Model.sessionId, chatId = "param" })';
             link = link.replace("param", chatId);
+            link = encodeURI(link + '&mensagem=' + xxx.value);
             $('#div-cliente').load(link);
         }
         else {
             var link = '@Url.Action("Listening", new { id = Model.sessionId })';
             $('#div-cliente').load(link);
+        }
+    }
+
+    function keyEnter() {
+
+        var tecla = event.keyCode;
+        if (tecla == 13) {
+            send();
         }
     }
 
@@ -105,6 +115,7 @@
             var link = '@Url.Action("Send", new { id = Model.sessionId, chatId = "param" })';
             link = encodeURI(link.replace("param", chatId + '&mensagem=' + texto));
             xxx.value = '';
+            $("#btnMensagem").focus();
             $('#div-cliente').load(link);
         }
     }

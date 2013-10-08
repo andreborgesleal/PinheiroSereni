@@ -212,6 +212,9 @@ namespace PiazzaToscana.Controllers
 
                     if (r.mensagem.Code > 0)
                         throw new PinheiroSereniException(value.mensagem);
+
+                    TempData.Remove("typing");
+                    TempData.Add("typing", "");
                     
                     return RedirectToAction("Talk", new { chatId = r.chat.chatId });
                 }
@@ -250,11 +253,16 @@ namespace PiazzaToscana.Controllers
         public ActionResult Listening(string id, string mensagem)
         {
             ChatModel chatModel = new ChatModel();
-            ChatRepository r = (ChatRepository)chatModel.getRepository(id);
-            return View(r);
+            string mudou = TempData.Peek("typing").ToString() != mensagem ? "S" : "N";
 
-            //SessaoRepository r = (SessaoRepository)chat.getSessao(id, chatId);
-            //return View(r.chatRepositories);
+            ChatRepository r = (ChatRepository)chatModel.getRepository(id);
+
+            chatModel.TypingClient(int.Parse(id), mudou);
+
+            TempData.Remove("typing");
+            TempData.Add("typing", mensagem);
+
+            return View(r);
         }
 
         [ValidateInput(false)]
@@ -262,6 +270,10 @@ namespace PiazzaToscana.Controllers
         {
             ChatModel chatModel = new ChatModel();
             ChatRepository r = (ChatRepository)chatModel.Send(int.Parse(id), mensagem);
+
+            TempData.Remove("typing");
+            TempData.Add("typing", "");
+
             return View(r);
         }
 
@@ -271,6 +283,7 @@ namespace PiazzaToscana.Controllers
             ChatRepository r = (ChatRepository)chatModel.ChatOver(int.Parse(id));
             return View(r);
         }
+
         #endregion
 
         public ActionResult ShowPic(string img)

@@ -22,6 +22,8 @@ namespace PinheiroSereni.Negocio.Repositories.Chat
         public PinheiroSereni.Dominio.Entidades.Chat chat { get; set; }
         public IEnumerable<ChatMessage> chatMessages { get; set; }
         public ICorretorDaVez<PinheiroSereni.Dominio.Entidades.Chat> corretorDaVez { get; set; }
+        public string typingClient { get; set; } // S-Sim, está escrevendo uma mensagem ou N-Não está escrevendo mensagem
+        public string typingOperator { get; set; } // S-Sim, está escrevendo uma mensagem ou N-Não está escrevendo mensagem
         public string conversa
         {
             get

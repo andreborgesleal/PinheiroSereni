@@ -1,7 +1,612 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 This file is used by the publish/package process of your Web project. You can customize the behavior of this process
 by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <File Include="App_Data/MensagemPadrao.xml">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="App_Data/PiazzaToscana.pdf">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/20/2013 13:55:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/19/2012 10:59:52</publishTime>
+    </File>
+    <File Include="bin/PiazzaToscana.dll">
+      <publishTime>10/07/2013 22:32:16</publishTime>
+    </File>
+    <File Include="bin/PinheiroSereni.Dominio.dll">
+      <publishTime>10/07/2013 22:23:50</publishTime>
+    </File>
+    <File Include="bin/PinheiroSereni.Library.dll">
+      <publishTime>10/07/2013 22:23:49</publishTime>
+    </File>
+    <File Include="bin/PinheiroSereni.Negocio.dll">
+      <publishTime>10/07/2013 22:23:50</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/05/2011 16:45:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/05/2011 18:42:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/05/2011 16:45:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>01/05/2011 16:45:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>01/05/2011 16:45:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>01/05/2011 16:45:38</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/abacabecalho2.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/atendente.jpg">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/atendente.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/Barra.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/box3.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/box_fill.PNG">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/Brinquedoteca.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/BrinquedotecaGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/btnEnviar.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/callToYou.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/callToYou2.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/carregando.gif">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/carta2.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/chat_offline.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/chat_online.jpg">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/churrasqueira.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/churrasqueiraGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/cinema.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/cinemaGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/corretor2.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/corretora_imagem.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/CorretorOnline.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/cyber.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/cyberGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/eMail.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/email2.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/eMailIcon.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/email_cad.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/Empreendimento.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/espmulher.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/espmulherGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/fachada.jpg">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/fitness.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/fitnessGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/flamula2.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/FotoCorretor.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/google_pin.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/gourmet.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/gourmetGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/hallsocial.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/hallsocialGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/icon_call_center.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/j0434874.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/jogos.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/jogosGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/jogosjuvenis.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/jogosjuvenisGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/Logomarca.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/LogoPinheiroSereni.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/mapa.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/phone.jpg">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/phone_97817.jpg">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/PiazzaToscana.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/piazzatoscana2.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/piscina.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/piscinaGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/PizzaToscanaPequeno.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/playaventura.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/playaventuraGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/playbaby.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/playbabyGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/postit.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/pracacooper.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/pracacooperGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/pracadosdesejos.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/pracadosdesejosGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/quadraesportiva.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/quadraesportivaGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/sacada.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/sacadaGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/sala.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/salaGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/salaofestas.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/salaofestasGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/salaofestasinfantil.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/salaofestasinfantilGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/seta_direita.old.PNG">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/seta_direita.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/seta_esquerda.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/splash_telefone.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/squash.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/squashGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/suite.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/suiteGrande.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/telefone.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/telefone2.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/torre.jpg">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/PiazzaToscana/X.PNG">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_222222_256x240.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_454545_256x240.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_888888_256x240.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery-ui.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.accordion.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.all.css">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.autocomplete.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.base.css">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.button.css">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.core.css">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.datepicker.css">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.dialog.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.progressbar.css">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.resizable.css">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.selectable.css">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.slider.css">
+      <publishTime>03/19/2013 11:50:22</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.tabs.css">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.theme.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_222222_256x240.png">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_454545_256x240.png">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_888888_256x240.png">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery-ui.min.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.accordion.min.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.autocomplete.min.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.button.min.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.core.min.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.datepicker.min.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.dialog.min.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.progressbar.min.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.resizable.min.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.selectable.min.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.slider.min.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.tabs.min.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.theme.min.css">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="favicon.png">
+      <publishTime>03/19/2013 11:48:47</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>03/20/2013 13:59:08</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.js">
+      <publishTime>03/19/2013 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.min.js">
+      <publishTime>03/19/2013 11:48:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.20.js">
+      <publishTime>03/19/2013 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.20.min.js">
+      <publishTime>03/19/2013 11:48:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>03/19/2013 11:48:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>03/19/2013 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>03/19/2013 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>03/19/2013 11:48:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>03/19/2013 11:48:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>03/19/2013 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftAjax.debug.js">
+      <publishTime>03/19/2013 11:48:37</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftAjax.js">
+      <publishTime>03/19/2013 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftMvcAjax.debug.js">
+      <publishTime>03/19/2013 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftMvcAjax.js">
+      <publishTime>03/19/2013 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftMvcValidation.debug.js">
+      <publishTime>03/19/2013 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftMvcValidation.js">
+      <publishTime>03/19/2013 11:48:37</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.5.3.js">
+      <publishTime>03/19/2013 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/SQL/script_pinheiro_sereni.sql">
+      <publishTime>03/19/2013 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/SQL/script_pinheiro_sereni_v2.sql">
+      <publishTime>03/21/2013 11:19:40</publishTime>
+    </File>
+    <File Include="Views/Account/ChangePassword.cshtml">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Views/Account/ChangePasswordSuccess.cshtml">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Views/Account/LogOn.cshtml">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Views/Account/Register.cshtml">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Views/Home/AtendimentoEmail.cshtml">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Views/Home/Chat.cshtml">
+      <publishTime>10/07/2013 09:13:57</publishTime>
+    </File>
+    <File Include="Views/Home/EmConstrucao.cshtml">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Views/Home/LigamosParaVoce.cshtml">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Views/Home/Listening.cshtml">
+      <publishTime>10/07/2013 16:56:16</publishTime>
+    </File>
+    <File Include="Views/Home/Send.cshtml">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Views/Home/ShowPic.cshtml">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Views/Home/Talk.cshtml">
+      <publishTime>10/07/2013 18:26:57</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Views/Shared/Mensagem.cshtml">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>10/07/2013 09:15:44</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout2.cshtml">
+      <publishTime>10/07/2013 09:12:02</publishTime>
+    </File>
+    <File Include="Views/Shared/_LogOnPartial.cshtml">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>03/19/2013 11:50:23</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/07/2013 22:32:18</publishTime>
+    </File>
+  </ItemGroup>
 </Project>

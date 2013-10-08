@@ -1,0 +1,8 @@
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Library\bin\Debug\PinheiroSereni.Library.dll.config
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Library\bin\Debug\PinheiroSereni.Library.dll
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Library\bin\Debug\PinheiroSereni.Library.pdb
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Library\obj\Debug\PinheiroSereni.Library.dll
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Library\obj\Debug\PinheiroSereni.Library.pdb
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Library\bin\Debug\EntityFramework.dll
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Library\bin\Debug\EntityFramework.xml
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Library\obj\Debug\PinheiroSereni.Library.csprojResolveAssemblyReference.cache

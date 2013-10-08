@@ -1,0 +1,10 @@
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Dominio\obj\Debug\PinheiroSereni.Dominio.csprojResolveAssemblyReference.cache
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Dominio\bin\Debug\PinheiroSereni.Dominio.dll.config
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Dominio\bin\Debug\PinheiroSereni.Dominio.dll
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Dominio\bin\Debug\PinheiroSereni.Dominio.pdb
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Dominio\bin\Debug\EntityFramework.dll
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Dominio\bin\Debug\PinheiroSereni.Library.dll
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Dominio\bin\Debug\PinheiroSereni.Library.pdb
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Dominio\bin\Debug\EntityFramework.xml
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Dominio\obj\Debug\PinheiroSereni.Dominio.dll
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Dominio\obj\Debug\PinheiroSereni.Dominio.pdb

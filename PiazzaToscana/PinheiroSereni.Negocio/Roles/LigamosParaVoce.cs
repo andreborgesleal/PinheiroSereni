@@ -10,6 +10,7 @@ using PinheiroSereni.Negocio.Repositories;
 using PinheiroSereni.Library;
 using System.Net.Mail;
 using System.Data.Common;
+using System.Linq;
 
 namespace PinheiroSereni.Negocio.Roles
 {
@@ -71,6 +72,34 @@ namespace PinheiroSereni.Negocio.Roles
                     #region identifica o corretor da vez
                     SMSRepository r = (SMSRepository)value;
                     CorretorOnline corretor = r.corretor.obterCorretor(db.SMSs, db.CorretorOnlines);
+                    #endregion
+
+                    #region verifica se tem sessão ativa para o corretor da vez
+                    var _s = from s in db.Sessaos
+                             where s.corretorId == corretor.corretorId &&
+                                   s.dt_desativacao == null &&
+                                   s.statusOperador.Equals("O")
+                             select s;
+                    #endregion
+
+                    #region Se o corretor da vez não tiver sessão ativa, procurar o primeiro corretor que esteja online
+                    if (_s.Count() == 0)
+                    {
+                        _s = from s in db.Sessaos
+                             where s.dt_desativacao == null &&
+                                   s.statusOperador.Equals("O") &&
+                                   s.corretorId != null
+                             orderby s.CorretorOnline.indexEscala
+                             select s;
+
+                        if (_s.Count() == 0) // não tem corretor online => usar o corretor "Supervisor Online"
+                            corretor = (from cor in db.CorretorOnlines where cor.nome == "Supervisor Online" select cor).FirstOrDefault();
+                        else if (_s.Where(m => m.CorretorOnline.indexEscala >= corretor.indexEscala).Count() > 0)
+                        {
+                            _s = _s.Where(m => m.CorretorOnline.indexEscala >= corretor.indexEscala);
+                            corretor = db.CorretorOnlines.Find(_s.First().corretorId);
+                        }
+                    }
                     #endregion
 
                     #region insere o registro SMS do cliente

@@ -37,6 +37,9 @@ namespace PinheiroSereni.Dominio.Entidades
         [RegularExpression(".+\\@.+\\..+", ErrorMessage = "E-mail inválido.")]
         public string email { get; set; }
 
+        public string typingClient { get; set; }
+        public string typingOperator { get; set; }
+
         public virtual Sessao Sessao { get; set; }
         public virtual Prospect Prospect { get; set; }
         public virtual CorretorOnline CorretorOnline { get; set; }

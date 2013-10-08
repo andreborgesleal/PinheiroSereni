@@ -1,0 +1,12 @@
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Negocio\obj\Debug\PinheiroSereni.Negocio.csprojResolveAssemblyReference.cache
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Negocio\bin\Debug\PinheiroSereni.Negocio.dll.config
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Negocio\bin\Debug\PinheiroSereni.Negocio.dll
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Negocio\bin\Debug\PinheiroSereni.Negocio.pdb
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Negocio\bin\Debug\EntityFramework.dll
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Negocio\bin\Debug\PinheiroSereni.Dominio.dll
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Negocio\bin\Debug\PinheiroSereni.Library.dll
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Negocio\bin\Debug\PinheiroSereni.Dominio.pdb
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Negocio\bin\Debug\PinheiroSereni.Library.pdb
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Negocio\bin\Debug\EntityFramework.xml
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Negocio\obj\Debug\PinheiroSereni.Negocio.dll
+C:\Users\André\Documents\PiazzaToscana\PinheiroSereni.Negocio\obj\Debug\PinheiroSereni.Negocio.pdb

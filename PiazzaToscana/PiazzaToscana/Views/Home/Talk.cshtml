@@ -51,13 +51,15 @@
                     <div style="margin-left: auto; font-weight: bold; width: 165px; font-weight: normal !important">
                         @Model.corretor.email
                     </div> 
+                    <div style="margin-left: auto; font-weight: bold; width: 165px; font-weight: normal !important">
+                    </div> 
                 </div>
                 <div style="width: 365px; float: left; margin-top: 0px">
                     <div id="div-cliente" style="margin-left: 0px; font-weight: bold; width: 360px">
                         @Html.Partial("Listening", Model)                       
                     </div>
                     <div style="margin-top: 10px; margin-left: 0px; width: 360px;">
-                        @Html.TextArea("mensagem_cliente", "", new { @class = "text-area-mens" })
+                        @Html.TextArea("mensagem_cliente", "", new { @class = "text-area-mens", @onkeydown = "keyEnter()" })
                     </div>  
                     <div style="float: left; margin-top: 10px; margin-left: 0px; width: 360px; height: 40px">
                         <input type="button" id="btnMensagem" value="Enviar" onclick="send();" style="border-radius: 5px; background-color: #449284; color: #fff; width: 150px; font-weight: bold; float: left" />
@@ -66,20 +68,29 @@
             </div>
         </div>
     </div>
+    <div id="div-typing"></div>
 }
 
 <script type="text/javascript">
 
-    setInterval("AutoRefresh()", 10000);
+    setInterval("AutoRefresh()", 4000);
 
     function AutoRefresh() {
+        var xxx = document.all.item("mensagem_cliente");
         var _isOnline = document.all.item("isOnline");
         if (_isOnline.value == 'S') {
             var link = '@Url.Action("Listening", new { id = Model.chat.chatId })';
-            link = encodeURI(link + '?mensagem=ttttt');
+            link = encodeURI(link + '?mensagem=' + xxx.value);
             $('#div-cliente').load(link);
         }
 
+    }
+
+    function keyEnter() {
+        var tecla = event.keyCode;
+        if (tecla == 13) {
+            send();
+        }
     }
 
     function send() {
@@ -89,6 +100,7 @@
             var link = '@Url.Action("Send", new { id = Model.chat.chatId })';
             link = encodeURI(link + '?mensagem=' + xxx.value);
             xxx.value = '';
+            $("#btnMensagem").focus();
             $('#div-cliente').load(link);
         }
     }
