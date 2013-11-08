@@ -36,8 +36,6 @@ namespace PiazzaToscana.Controllers
             if (ModelState.IsValid)
                 try
                 {
-                    if (value.sobreNome == null)
-                        throw new ArgumentException("Por favor, informe o seu sobrenome");
                     ControllerFactory<Inscricao> factory = new ControllerFactory<Inscricao>();
                     value.prospect.empreendimentoId = 1;  // Piazza Toscana
                     value = (ProspectRepository)factory.Insert(value);
