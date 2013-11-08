@@ -105,6 +105,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\MensagemPadrao.xml" />
+    <Content Include="Content\themes\base\images\NovoLayout\Apartamentos.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\Apartamentos_a_venda.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\Apartamentos_Belem.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\imoveis.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\temp\Apartamentos.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\temp\Apartamentos_a_venda.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\temp\Apartamentos_Belem.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\temp\Apartamentos_na_planta.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\temp\Apartamentos_novos.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\temp\Financiamento_Imoveis.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\temp\imoveis.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\temp\Imoveis_a_venda_belem.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\temp\Imóvel_lançamento.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\temp\Imóvel_na_planta.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\temp\Piazza_Toscana.png" />
     <Content Include="Content\themes\base\images\PiazzaToscana\abacabecalho2.png" />
     <Content Include="Content\themes\base\images\PiazzaToscana\atendente.jpg" />
     <Content Include="Content\themes\base\images\PiazzaToscana\atendente.png" />
