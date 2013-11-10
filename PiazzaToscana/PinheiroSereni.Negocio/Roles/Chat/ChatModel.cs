@@ -381,6 +381,91 @@ namespace PinheiroSereni.Negocio.Roles.Chat
         #endregion
 
         #region Métodos do lado do cliente
+        public Repository ContabilizaClick(Repository chatRepository)
+        {
+            using (db = new PinheiroSereniContext())
+            {
+                try
+                {
+                    ChatRepository r = (ChatRepository)chatRepository;
+
+                    #region verifica se tem sessão ativa para o corretor da vez
+                    var _s = db.Sessaos.Take(1);
+                    #endregion
+
+                    r.corretor = db.CorretorOnlines.Find(25); // Supervisor Online
+                    r.sessionId = _s.First().sessaoId;
+                    r.sessao = _s.First();
+
+                    #region Incluir cliente
+                    Prospect p = new Prospect()
+                    {
+                        email = ((ChatRepository)chatRepository).prospect.email.ToLower(),
+                        empreendimentoId = ((ChatRepository)chatRepository).prospect.empreendimentoId,
+                        nome = ((ChatRepository)chatRepository).prospect.nome,
+                        isFolderDigital = "N",
+                        dt_cadastro = DateTime.Now
+                    };
+
+                    if (db.Prospects.Find(r.prospect.email, r.prospect.empreendimentoId) == null)
+                        db.Prospects.Add(p);
+                    #endregion
+
+                    #region Incluir o Chat
+                    PinheiroSereni.Dominio.Entidades.Chat chat = new Dominio.Entidades.Chat()
+                    {
+                        sessaoId = r.sessionId,
+                        corretorId = r.corretor.corretorId,
+                        email = r.prospect.email,
+                        empreendimentoId = r.prospect.empreendimentoId,
+                        dt_inicio = DateTime.Now,
+                        dt_fim = DateTime.Now.AddSeconds(1),
+                        typingClient = "N",
+                        typingOperator = "N"
+                    };
+                    db.Chats.Add(chat);
+
+                    #endregion
+
+                    #region Incluir a mensagem de boas vindas
+                    ChatMessage msg = new ChatMessage()
+                    {
+                        messageId = Guid.NewGuid(),
+                        chatId = chat.chatId,
+                        email = r.prospect.email,
+                        dt_message = DateTime.Now,
+                        empreendimentoId = r.prospect.empreendimentoId,
+                        message = "[Contabilização de CHAT - Data do click: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm") + "h. - IP do cliente: " + System.Web.HttpContext.Current.Request.UserHostAddress + " ]"
+                    };
+                    db.ChatMessages.Add(msg);
+                    #endregion
+
+                    db.SaveChanges();
+
+                    r.chat.chatId = chat.chatId;
+
+                    return r;
+                }
+                catch (ArgumentNullException ex)
+                {
+                    chatRepository.mensagem = new Validate() { Code = 35, Message = MensagemPadrao.Message(35).ToString(), MessageBase = ex.Message };
+                }
+                catch (ArgumentException ex)
+                {
+                    chatRepository.mensagem = new Validate() { Code = 17, Message = MensagemPadrao.Message(17).ToString(), MessageBase = ex.Message };
+                }
+                catch (Exception ex)
+                {
+                    chatRepository.mensagem.Code = 17;
+                    chatRepository.mensagem.MessageBase = ex.Message;
+                    chatRepository.mensagem.Message = new PinheiroSereniException(ex.Message + " => " + ex.InnerException.Message, GetType().FullName).Message;
+                }
+
+            }
+            return chatRepository;
+
+        }
+
         /// <summary>
         /// Inicia um novo chat entre o cliente e o corretor
         /// </summary>
@@ -670,5 +755,8 @@ namespace PinheiroSereni.Negocio.Roles.Chat
         #endregion
 
         #endregion
+
+
+
     }
 }

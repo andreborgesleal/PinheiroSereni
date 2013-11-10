@@ -179,6 +179,47 @@ namespace PiazzaToscana.Controllers
             return View();
         }
 
+        public ActionResult ContabilizaChat()
+        {
+            DateTime dataHora1 = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 9, 30, 0);
+            DateTime dataHora2 = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 19, 30, 0);
+
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Sunday)
+                dataHora2 = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 15, 30, 0);
+            
+            if (DateTime.Now >= dataHora1 && DateTime.Now <= dataHora2)
+                try
+                {
+                    ChatModel chatModel = new ChatModel();
+                    ChatRepository r = new ChatRepository();
+                    r.mensagem = new Validate();
+                    r.prospect = new Prospect()
+                    {
+                        email = "cacobleal@gmail.com",
+                        empreendimentoId = 1,
+                        nome = "CACO NOVO CHAT"
+                    };
+                    r.chat = new Chat();
+                    r.chat.empreendimentoId = 1;
+                    
+
+                    r = (ChatRepository)chatModel.ContabilizaClick(r);
+
+                    if (r.mensagem.Code > 0)
+                        throw new PinheiroSereniException(r.mensagem);
+
+                }
+                catch (Exception ex)
+                {
+                    PinheiroSereniException.saveError(ex, GetType().FullName);
+                }
+
+
+            return null;
+
+
+        }
+
         [HttpPost]
         public ActionResult Chat(ProspectRepository value)
         {
