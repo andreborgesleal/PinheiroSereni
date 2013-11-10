@@ -17,35 +17,36 @@
 </head>
 <body style="background-color: #fff" onLoad="comeco()">
     <div class="page">
-        <div style="height: 132px; margin-top: 0px; background-image: url(~/../../content/themes/base/images/NovoLayout/Apartamentos_Belem.png); background-repeat: no-repeat; width: 1029px">
+        <a id="lnkCorretorOnline" href="http://www.vivaciweb.com.br/chat/client.php?locale=pt-br&amp;group=1" target="_blank" style = "color: #000; text-decoration: none" onclick="if(navigator.userAgent.toLowerCase().indexOf('opera') != -1 &amp;&amp; window.event.preventDefault) window.event.preventDefault();this.newWindow = window.open(&#039;http://www.vivaciweb.com.br/chat/client.php?locale=pt-br&amp;group=1&amp;url=&#039;+escape(document.location.href)+&#039;&amp;referrer=&#039;+escape(document.referrer), 'mibew', 'toolbar=0,scrollbars=0,location=0,status=1,menubar=0,width=640,height=480,resizable=1');this.newWindow.focus();this.newWindow.opener=window;return false;"></a>  
+        <div style="height: 132px; background-image: url(~/../../content/themes/base/images/NovoLayout/Apartamentos_Belem.png); background-repeat: no-repeat; width: 102%; margin-left: -2%">
             <div style="height: 122px; width: 280px; float: left; margin-left: 0px; font-size: 12px; color: #fff; text-align: right">
                 &nbsp;
             </div>
-            <div style="cursor: pointer; float: left; height: 132px; width: 295px; background-image: url(~/../../content/themes/base/images/NovoLayout/imoveis.png); background-repeat: no-repeat" onclick="javascript:$('#lnkCorretorOnline').click()" >
+            <div style="cursor: pointer; float: left; height: 132px; width: 295px; background-image: url(~/../../content/themes/base/images/NovoLayout/imoveis.png); background-repeat: no-repeat" onclick="javascript:contabilizaClick();" >
                 &nbsp;
             </div>
-            <div style="float: left; cursor: pointer; height: 132px; width: 270px; background-image: url(~/../../content/themes/base/images/NovoLayout/Apartamentos_a_venda.png); background-repeat: no-repeat; margin-top: 25px">
+            <div style="float: left; cursor: pointer; height: 132px; width: 250px; background-image: url(~/../../content/themes/base/images/NovoLayout/Apartamentos_a_venda.png); background-repeat: no-repeat; margin-top: 25px">
                 &nbsp;
             </div>
             <div style="height: 132px; width: 150px; float: left; font-weight: bold; font-size: 11px; color: #fff; text-align: left; background-image: url(~/../../content/themes/base/images/NovoLayout/Apartamentos.png); background-repeat: no-repeat; margin-top: 35px">
                 &nbsp;
             </div>
         </div>
-        <div style="width: 1029px">
-            <div style="margin-top: -30px; width: 604px; float: left">
-                <div style="height: 343px; width: 574px; cursor: pointer; background-image: url(~/../../content/themes/base/images/NovoLayout/Financiamento_Imoveis.png); background-repeat: no-repeat; float: left">
+        <div style="width: 987px; margin-left: 0px">
+            <div style="margin-top: -30px; width: 555px; float: left">
+                <div style="height: 343px; width: 555px; cursor: pointer; background-image: url(~/../../content/themes/base/images/NovoLayout/Financiamento_Imoveis.png); background-repeat: no-repeat; float: left">
                     &nbsp;
                 </div>
             </div>
             <div style="margin-top: -70px; width: 425px; margin-left: 0px; float: left" >
-                <div style="width: 300px; height: 210px; margin-top: 0px; background-image: url(~/../../content/themes/base/images/NovoLayout/Piazza_Toscana.png); background-repeat: no-repeat; background-position-x: 45px; background-position-y: 20px; float: left">
+                <div style="width: 350px; height: 210px; margin-top: 0px; background-image: url(~/../../content/themes/base/images/NovoLayout/Piazza_Toscana.png); background-repeat: no-repeat; background-position-x: 60px; background-position-y: 20px; float: left">
                 </div>
-                <div style="width: 300px; height: 264px; margin-top: -15px; background-image: url(~/../../content/themes/base/images/NovoLayout/Apartamentos_na_planta.png); background-repeat: no-repeat; background-position-x: 15px; background-position-y: 20px; float: left">
+                <div style="width: 350px; height: 264px; margin-top: -15px; background-image: url(~/../../content/themes/base/images/NovoLayout/Apartamentos_na_planta.png); background-repeat: no-repeat; background-position-x: 65px; background-position-y: 20px; float: left">
                     &nbsp;
                 </div>
             </div>
         </div>
-        <div style="width: 1029px">
+        <div style="width: 987px; margin-left: 0px">
             <div style="margin-top: -30px; width: 620px; float: left">
                 <div style="margin-top: -5px; width: 650px; float: left;" >
                     <div style="height: 25px; float: left; width: 320px;">&nbsp;</div>
@@ -76,14 +77,14 @@
                 </div>
             </div>
             <div style="width: 335px; margin-left: 0px; float: left; margin-top: 0px" >
-                <div style="height: 214px; margin-top: 0px; margin-left: 0px; width: 330px; float: left; background-image: url(~/../../content/themes/base/images/NovoLayout/Apartamentos_novos.png); background-repeat: no-repeat; font-size: 14px; color: #fff; font-weight: bold" >
+                <div style="height: 120px; margin-top: 0px; margin-left: 0px; width: 330px; float: left; background-image: url(~/../../content/themes/base/images/NovoLayout/Apartamentos_novos.png); background-repeat: no-repeat; font-size: 14px; color: #fff; font-weight: bold" >
                     <div style="width: 290px; height: 10px; padding-left: 10px; font-family: Arial; text-align: center"><p></p></div>
                      @RenderBody()
                 </div>
             </div>
         </div>
         <!-- Google Map -->
-        <div style="width: 670px; height: 42px; margin-top: -115px; float: left; font-size: 16px; color: #808080; font-family: Calibri; text-align: center; margin-left: 135px" >
+        <div style="width: 670px; margin-top: -24px; float: left; font-size: 16px; color: #808080; font-family: Calibri; text-align: center; margin-left: 135px" >
             <div style="float: left; height: 30px; width: 670px; background-image: url(~/../../content/themes/base/images/PiazzaToscana/google_pin_min.png); background-repeat: no-repeat; background-position-x: 250px; margin-top: -20px; font-weight: bold; cursor: pointer" onclick="showMapa()">
                 <div style="margin-top: 12px; width: 670px; padding-left: 15px">  
                     Mapa com a localização.
@@ -130,12 +131,13 @@
                 </div>
             </div>
         </div>
+        <div id="chatClick"></div>
         <section id="main">
            
         </section>
         <footer>
         </footer>
-        <a id="lnkCorretorOnline" href="http://www.vivaciweb.com.br/chat/client.php?locale=pt-br&amp;group=1" target="_blank" style = "color: #000; text-decoration: none" onclick="if(navigator.userAgent.toLowerCase().indexOf('opera') != -1 &amp;&amp; window.event.preventDefault) window.event.preventDefault();this.newWindow = window.open(&#039;http://www.vivaciweb.com.br/chat/client.php?locale=pt-br&amp;group=1&amp;url=&#039;+escape(document.location.href)+&#039;&amp;referrer=&#039;+escape(document.referrer), 'mibew', 'toolbar=0,scrollbars=0,location=0,status=1,menubar=0,width=640,height=480,resizable=1');this.newWindow.focus();this.newWindow.opener=window;return false;"></a>      </div>
+    </div>
 </body>
 
 <script type="text/javascript">
@@ -185,15 +187,23 @@
                     "~/../../content/themes/base/images/PiazzaToscana/jogosGrande.png",
                     "~/../../content/themes/base/images/PiazzaToscana/jogosjuvenisGrande.png")
 
+    function contabilizaClick() {
+        $('#lnkCorretorOnline').click();
+        var link = '@Url.Action("ContabilizaChat")';
+        $('#chatClick').load(link);
+    }
+
     function moldura(status, obj) {
         if (status == 'ON') {
             obj.style["border"] = "solid";
             obj.style["border-width"] = "2px";
             obj.style["border-color"] = "#243480";
             obj.style["border-radius"] = "5px";
+            obj.style["opacity"] = "0.6";
         }
         else {
             obj.style["border"] = "none";
+            obj.style["opacity"] = "1";
         }
     }
 

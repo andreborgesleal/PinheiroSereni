@@ -108,7 +108,14 @@
     <Content Include="Content\themes\base\images\NovoLayout\Apartamentos.png" />
     <Content Include="Content\themes\base\images\NovoLayout\Apartamentos_a_venda.png" />
     <Content Include="Content\themes\base\images\NovoLayout\Apartamentos_Belem.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\Apartamentos_na_planta.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\Apartamentos_novos.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\Financiamento_Imoveis.png" />
     <Content Include="Content\themes\base\images\NovoLayout\imoveis.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\Imoveis_a_venda_belem.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\Imovel_lançamento.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\Imovel_na_planta.png" />
+    <Content Include="Content\themes\base\images\NovoLayout\Piazza_Toscana.png" />
     <Content Include="Content\themes\base\images\NovoLayout\temp\Apartamentos.png" />
     <Content Include="Content\themes\base\images\NovoLayout\temp\Apartamentos_a_venda.png" />
     <Content Include="Content\themes\base\images\NovoLayout\temp\Apartamentos_Belem.png" />
