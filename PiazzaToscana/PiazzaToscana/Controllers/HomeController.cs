@@ -181,11 +181,11 @@ namespace PiazzaToscana.Controllers
 
         public ActionResult ContabilizaChat()
         {
-            DateTime dataHora1 = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 9, 30, 0);
-            DateTime dataHora2 = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 19, 30, 0);
+            DateTime dataHora1 = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 1, 0);
+            DateTime dataHora2 = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59);
 
             if (DateTime.Today.DayOfWeek == DayOfWeek.Sunday)
-                dataHora2 = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 15, 30, 0);
+                dataHora2 = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59);
             
             if (DateTime.Now >= dataHora1 && DateTime.Now <= dataHora2)
                 try
