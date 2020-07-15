@@ -3,7 +3,7 @@ Sistema de Marketing Digital (leading pages) para vendas de imóveis nos empreen
 
 A ideia central deste sistema é realizar o marketing de vendas das unidades dos empreendimentos Piazza Toscana e San Genaro da construtora Pinheiro & Sereni.
 
-O cliente chega "landing page" pelo Google Ads. Nesta página de pouso são mostradas algumas imagens do empreendimento. 
+O cliente chega na "landing page" pelo Google Ads. Nesta página de pouso são mostradas algumas imagens do empreendimento. 
 
 É então oferecido ao cliente opção para conversar por chat com o corretor (em horário comercial).
 
